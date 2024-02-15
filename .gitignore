@@ -130,3 +130,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# Configuration Files
+pease-portfolio/src/app/projects.json
