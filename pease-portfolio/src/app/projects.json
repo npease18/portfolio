@@ -1,6 +1,14 @@
 {
     "AviationAssistantV1": {
-        "description": "",
-        "url": ""
+        "description": "The Aviation Assistant V1 is an all-in-one ADS-B processing device that includes an integrated touchscreen and speaker for on-the-go plane tracking",
+        "img": "aa1.png"
+    },
+    "AviationAssistantV2": {
+        "description": "The Aviation Assistant V2 is a revamped version of the Aviation Assistant sporting a larger battery/runtime in addition to a more portable footprint for use in the field.",
+        "img": "aa2.png"
+    },
+    "Aubuchon Register Tool": {
+        "description": "The register tools are a suite of software developed for the Aubuchon Hardware company to aid in the updating of manual UPC lookup books as well as interfacing with the backend's pricing API to provide real time inventory, pricing, and product information. Due to the nature of this software, it is closed sourced.  ",
+        "img": "aublogo.svg"
     }
 }
