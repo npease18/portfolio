@@ -14,8 +14,21 @@
     }
   }
 
-.shadow {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+.bash {
+    color: white;
+    font-size: medium ; 
+    font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+    display: inline; 
+    background-color: black
+}
+
+.cursor {
+  display: inline-block;
+  height: 1.1em;
+  margin-top: -4px;
+  width: 0.5em;
+  vertical-align: middle;
+  animation: 1s blink step-end infinite;
 }
 
 :root {

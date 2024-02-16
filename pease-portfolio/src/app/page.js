@@ -11,12 +11,20 @@ function AboutMe() {
           </div>
         </div>
         <div className="mt-5 col-span-2 max-lg:ml-5 max-lg:mr-5">
-          Notice: This website is still under construction<br/><br/>
-          Hello! My name is Nicholas Pease and I am currently a junior at the University of Maine pursuring a bachelors degree in 
-          Computer Science with a minor in Military Science. This website is a collection of both project / homework completed as 
-          required by my studies and as a showcase of some of the personal projects I have worked on. I will work to keep this up 
-          to date to the best of my ability. <br/><br/>This website was last updated on 2/14/2024.
-          </div>
+          <pre className="bash text-wrap">
+            MOTD: This website is still under construction<br/>
+            <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ uname -a<br/>
+            <div>
+            Hello! My name is Nicholas Pease and I am currently a junior at the University of Maine pursuring a bachelors degree in 
+            Computer Science with a minor in Military Science. This website is a collection of both project / homework completed as 
+            required by my studies and as a showcase of some of the personal projects I have worked on. I will work to keep this up 
+            to date to the best of my ability. <br/>
+            </div>
+            <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ timedatectl --lastupdated<br/>
+            This website was last updated on Thursday, Febuary 15th 2024.<br/>
+            <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ <span className="animate-blink"> </span>
+          </pre>  
+        </div>
       </div>
     </div>
   );

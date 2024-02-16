@@ -24,8 +24,8 @@ function Project({name, description, imgURL}) {
       <div className="w-[100%] mt-5">
         <div className="w-[100%] flex justify-center">
           <div className="w-[100%] self-center ml-5 mr-5">
-            <div className="bg-slate-900 w-[100%] h-[200px] rounded-lg p-5 grid grid-cols-2">
-              <div className="place-self-center">
+            <div className="bg-slate-900 w-[100%] rounded-lg p-5 grid sm:grid-cols-2">
+              <div className="place-self-center mb-5">
                 <img src={imgURL}/>
               </div>
               <div>
@@ -42,7 +42,7 @@ function Project({name, description, imgURL}) {
       <div className="w-[100%] mt-5">
         <div className="w-[100%] flex justify-center">
           <div className="w-[100%] self-center ml-5 mr-5">
-            <div className="bg-slate-900 w-[100%] h-[200px] rounded-lg p-5 grid grid-cols-2">
+            <div className="bg-slate-900 w-[100%] rounded-lg p-5">
               <div className="place-self-center">
                 <a href={"/projects/"+name} className="text-[24px] font-bold">{name}</a><br/>
                 <div>{description}</div>
