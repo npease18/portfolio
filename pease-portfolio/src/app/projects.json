@@ -1,11 +1,21 @@
 {
+    "ChatMaps": {
+        "description": "ChatMaps is a web-based social networking service that allows users to connect to others in their local geographic area. It implements an interactable mapping utility to show general user locations relative to others, as well as a chat room feature that allows users to start public conversations based on any given topic. ChatMaps is primarily intended for use in densely populated areas, such as college campuses or metropolitan areas, so people of similar interests can start new conversations.",
+        "img": "chatmaps.png",
+        "github_user": "ChatMaps",
+        "github_repo": "ChatMaps",
+        "isPublic": true,
+        "hasGitea": false,
+        "hasGithub": true
+    },
     "Aviation Assistant V1": {
-        "description": "The Aviation Assistant V1 is an all-in-one ADS-B processing device that includes an integrated touchscreen and speaker for on-the-go plane tracking",
+        "description": "The Aviation Assistant V1 is an all-in-one ADS-B processing device that includes an integrated touchscreen and speaker for on-the-go plane tracking.",
         "img": "aa1.png",
         "gitea_user": "npease",
         "gitea_repo": "AviationAssistant",
         "isPublic": true,
-        "hasGitea": true
+        "hasGitea": true,
+        "hasGithub": false
     },
     "Aviation Assistant V2": {
         "description": "The Aviation Assistant V2 is a revamped version of the Aviation Assistant sporting a larger battery/runtime in addition to a more portable footprint for use in the field.",
@@ -13,22 +23,25 @@
         "gitea_user": "npease",
         "gitea_repo": "AviationAssistantV2",
         "isPublic": true,
-        "hasGitea": true
+        "hasGitea": true,
+        "hasGithub": false
 
     },
     "Aubuchon Register Tool": {
-        "description": "The register tools are a suite of software developed for the Aubuchon Hardware company to aid in the updating of manual UPC lookup books as well as interfacing with the backend's pricing API to provide real time inventory, pricing, and product information. Due to the nature of this software, it is closed sourced.  ",
+        "description": "The register tools are a suite of software developed for the Aubuchon Hardware company to aid in the updating of manual UPC lookup books as well as interfacing with the backend's pricing API to provide real time inventory, pricing, and product information. Due to the nature of this software, it is closed sourced.",
         "img": "aublogo.svg",
         "gitea_user": "npease",
         "gitea_repo": "Aubuchon-book-generator",
         "isPublic": false,
-        "hasGitea": true
+        "hasGitea": true,
+        "hasGithub": false
     },
     "Personal Portfolio": {
         "description": "My personal portfolio is my first React and next.js project that also serves to showcase my personal projects and other career development accomplishments. This is hosted on my personal server and stands as a lesson in both web development as well as backend design.",
         "gitea_user": "npease",
         "gitea_repo": "portfolio",
-        "isPublic": true,
-        "hasGitea": false
+        "isPublic": false,
+        "hasGitea": true,
+        "hasGithub": false
     }
 }

@@ -33,10 +33,10 @@ function AboutMe() {
 function NotableProject({name}) {
   var Project = Projects[name]
   return (
-    <div className="text-center rounded-lg bg-slate-900 h-[420px] flex justify-center p-5 mt-5">
+    <div className="text-center rounded-lg bg-slate-900  flex justify-center p-5 mt-5">
       <div className="self-center">
         <div className="w-[100%] flex justify-center">
-          <img className="w-[375px] h-[77px]" src={Project.img}></img>
+          <img className="w-[90%]" src={Project.img}></img>
         </div>
         <div className="mt-5">
           <a href={"/projects/"+name} className="font-bold text-[24px]">{name}</a>
@@ -54,8 +54,8 @@ function ProjectsHome() {
     <div className="mb-10">
       <div className="pt-5 flex justify-center text-[45px]">Notable Projects</div>
       <div className="md:grid md:grid-cols-3 auto-cols-auto gap-x-5 gap-y-5 ml-5 mr-5">
+        <NotableProject name="ChatMaps"/>
         <NotableProject name="Aviation Assistant V1"/>
-        <NotableProject name="Aviation Assistant V2"/>
         <NotableProject name="Aubuchon Register Tool"/>
       </div>
       <div className="flex justify-center mt-5">
