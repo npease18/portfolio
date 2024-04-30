@@ -6,7 +6,7 @@ function AboutMe() {
       <div className="sm:flex sm:justify-center md:grid md:grid-cols-3 pt-5 auto-cols-max">
         <div className="md:mr-10 bg-slate-900 rounded-lg h-[420px] col-span-1 flex justify-center max-lg:ml-5 max-lg:mr-5">
           <div className="self-center">
-            <img className="w-56 h-56  rounded-full" src="me.jpg"></img>
+            <img className="w-56 h-56  rounded-full" src="/images/me.jpg"></img>
             <div className="pt-5 text-[45px]">About Me</div>
           </div>
         </div>
@@ -36,7 +36,7 @@ function NotableProject({name}) {
     <div className="text-center rounded-lg bg-slate-900  flex justify-center p-5 mt-5">
       <div className="self-center">
         <div className="w-[100%] flex justify-center">
-          <img className="w-[90%]" src={Project.img}></img>
+          <img className="w-[90%]" src={"/images/"+Project.img}></img>
         </div>
         <div className="mt-5">
           <a href={"/projects/"+name} className="font-bold text-[24px]">{name}</a>

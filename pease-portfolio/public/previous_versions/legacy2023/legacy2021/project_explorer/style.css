@@ -1,0 +1,19 @@
+.project-card {
+    width: 98.5%;
+    margin: 10px;
+}
+
+.blog-card {
+    width: 98.5%;
+    margin: 10px;;
+}
+
+.mdl-chip {
+    margin: 10px;
+}
+
+.active {color: green;}
+.inactive {color: orange;}
+.canceled {color: red;}
+.depracated {color: yellow;}
+.hidden {display: none;}

@@ -1,0 +1,388 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Dashboard</title>
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+  <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <link rel="shortcut icon" href="images/favicon.png">
+
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="getmdl-select.min.css">
+  <script defer src="getmdl-select.min.js"></script>
+
+  <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+  </style>
+</head>
+
+<body onload="onLoad();">
+  <img src="loading.gif" id="loading">
+  <div id="main_content" style="display: none;">
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+      <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title" id="page_title">Dashboard</span>
+          <div class="mdl-layout-spacer"></div>
+        </div>
+      </header>
+      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+          <img src="" id="firebase_photo" class="demo-avatar">
+          <span id="firebase_name"></span>
+          <div class="demo-avatar-dropdown">
+            <span id="firebase_email"></span>
+            <div class="mdl-layout-spacer"></div>
+            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+              <i class="material-icons" role="presentation">arrow_drop_down</i>
+              <span class="visuallyhidden">Options</span>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+              <li class="mdl-menu__item" onclick="logOut()">Log Out</li>
+            </ul>
+          </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+          <a class="mdl-navigation__link" href="javascript:displayProjects('all')"><i
+              class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+          <a class="mdl-navigation__link" href="javascript:openProjects()"><i
+              class="mdl-color-text--blue-grey-400 material-icons" role="presentation">grid_view</i>Projects</a>
+          <a class="mdl-navigation__link" href="javascript:openBlog()"><i
+              class="mdl-color-text--blue-grey-400 material-icons" role="presentation">rss_feed</i>Blog Posts</a>
+          <a class="mdl-navigation__link" href="javascript:openProgram()"><i
+              class="mdl-color-text--blue-grey-400 material-icons" role="presentation">developer_board</i>Software</a>
+          <a class="mdl-navigation__link" href="javascript:displayProjects('canceled')"><i
+              class="mdl-color-text--blue-grey-400 material-icons" role="presentation">link</i>Link Explorer</a>
+          <a href="https://nicholaspease.com" class="mdl-navigation__link"
+            href="javascript:displayProjects('canceled')"><i class="mdl-color-text--blue-grey-400 material-icons"
+              role="presentation">keyboard_return</i>Return to Website</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content mdl-color--grey-100">
+        <div id="program_tab" style="display: none;">
+          <div class="square-left" id="program">
+
+          </div>
+          <div class="square-right">
+            <div id="edit-program-box" style="display: none;">
+              <h2 id="edit-program-title">Title</h2>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="edit-program-author">
+                  <label class="mdl-textfield__label" for="edit-program-author">Author </label>
+                </div>
+              </form>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="edit-program-link">
+                  <label class="mdl-textfield__label" for="edit-program-link">URL </label>
+                </div>
+              </form>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="edit-program-image">
+                  <label class="mdl-textfield__label" for="edit-program-image">Image Link </label>
+                </div>
+              </form>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="edit-program-type">
+                  <label class="mdl-textfield__label" for="edit-program-image">Program Type</label>
+                </div>
+              </form>
+              <!-- Floating Multiline Textfield -->
+              <h4>Description</h4>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield" id="textfield_input">
+                  <textarea class="mdl-textfield__input" type="text" rows="5" id="edit-program-description"
+                    style="width: 75%;"></textarea>
+                  <label class="mdl-textfield__label" for="edit-program-description" style="width: 75%;"></label>
+                </div>
+              </form>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="save_button"
+                onclick="saveProgram()">
+                Save
+              </button>
+            </div>
+            <div id="new-program-box" style="display: none;">
+              <h4>New Program</h4>
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="new-program-title">
+                <label class="mdl-textfield__label" for="new-program-title">Title</label>
+              </div>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="new-program-author">
+                  <label class="mdl-textfield__label" for="new-program-author">Author </label>
+                </div>
+              </form>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="new-program-link">
+                  <label class="mdl-textfield__label" for="new-program-link">URL </label>
+                </div>
+              </form>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="new-program-image">
+                  <label class="mdl-textfield__label" for="new-program-image">Image Link </label>
+                </div>
+              </form>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="new-program-type">
+                  <label class="mdl-textfield__label" for="new-program-image">Program Type</label>
+                </div>
+              </form>
+              <!-- Floating Multiline Textfield -->
+              <h4>Description</h4>
+              <div class="mdl-textfield mdl-js-textfield" id="textfield_input">
+                <textarea class="mdl-textfield__input" type="text" rows="2" id="new-program-description"
+                  style="width: 75%;"></textarea>
+                <label class="mdl-textfield__label" for="new-program-description" style="width: 75%;"></label>
+              </div>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="new_button"
+                onclick="newProgram()">
+                Create
+              </button>
+            </div>
+          </div>
+          <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" id="new_button_program"
+            onclick='openNewProgram()'>
+            <i class="material-icons">add</i>
+          </button>
+          <div class="mdl-tooltip mdl-tooltip--top " for="new_button_program">
+            New Program
+          </div>
+        </div>
+        <div id="projects_tab" style="display: none;">
+          <div class="square-left" id="projects">
+
+          </div>
+          <div class="square-right">
+            <div id="edit-project-box" style="display: none;">
+              <h1 id="edit-project-title">Title</h1>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="edit-project-link">
+                  <label class="mdl-textfield__label" for="edit-project-link">Link </label>
+                </div>
+              </form>
+              <div
+                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                <input type="text" value="" class="mdl-textfield__input" id="edit-project-status" readonly>
+                <input type="hidden" value="" name="edit-project-status" id="edit-project-status-value">
+                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                <label for="edit-project-status" class="mdl-textfield__label">Status</label>
+                <ul for="edit-project-status" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                  <li class="mdl-menu__item" data-val="active" id="project_edit_active" data-selected="true">Active</li>
+                  <li class="mdl-menu__item" data-val="inactive" id="project_edit_inactive">Inactive</li>
+                  <li class="mdl-menu__item" data-val="canceled" id="project_edit_canceled">Canceled</li>
+                </ul>
+              </div>
+              <!-- Floating Multiline Textfield -->
+              <h4>Description</h4>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield" id="textfield_input">
+                  <textarea class="mdl-textfield__input" type="text" rows="5" id="edit-project-description"
+                    style="width: 75%;"></textarea>
+                  <label class="mdl-textfield__label" for="edit-project-description" style="width: 75%;"></label>
+                </div>
+              </form>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="save_button"
+                onclick="saveProject()">
+                Save
+              </button>
+            </div>
+            <div id="new-project-box" style="display: none;">
+              <h2>New Project</h2>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="new-project-title">
+                <label class="mdl-textfield__label" for="new-project-title">Title</label>
+              </div><br>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="new-project-link">
+                <label class="mdl-textfield__label" for="new-project-link">Link </label>
+              </div><br>
+              <div
+                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                <input type="text" value="" class="mdl-textfield__input" id="new-project-status" readonly>
+                <input type="hidden" value="" name="new-project-status" id="new-project-status-value">
+                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                <label for="new-project-status" class="mdl-textfield__label">Status</label>
+                <ul for="new-project-status" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                  <li class="mdl-menu__item" data-val="active" id="project_new_active" data-selected="true">Active</li>
+                  <li class="mdl-menu__item" data-val="inactive" id="project_new_inactive">Inactive</li>
+                  <li class="mdl-menu__item" data-val="canceled" id="project_new_canceled">Canceled</li>
+                </ul>
+              </div>
+              <!-- Floating Multiline Textfield -->
+              <h4>Description</h4>
+              <div class="mdl-textfield mdl-js-textfield" id="textfield_input">
+                <textarea class="mdl-textfield__input" type="text" rows="5" id="new-project-description"
+                  style="width: 75%;"></textarea>
+                <label class="mdl-textfield__label" for="new-project-description" style="width: 75%;"></label>
+              </div>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="new_button"
+                onclick="newProject()">
+                Create
+              </button>
+            </div>
+          </div>
+          <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" id="new_button_projects"
+            onclick='openNewProject()'>
+            <i class="material-icons">add</i>
+          </button>
+          <div class="mdl-tooltip mdl-tooltip--top " for="new_button_projects">
+            New Project
+          </div>
+        </div>
+        <div id="blogs_tab" style="display: none;">
+          <div class="square-left" id="blog">
+      
+          </div>
+          <div class="square-right">
+            <div id="edit-blog-box" style="display: none;">
+              <h1 id="edit-blog-title">Title</h1>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="edit-blog-author">
+                  <label class="mdl-textfield__label" for="edit-blog-link">Author </label>
+                </div>
+              </form>
+              <!-- Floating Multiline Textfield -->
+              <h4>Description</h4>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield" id="textfield_input">
+                  <textarea class="mdl-textfield__input" type="text" rows="5" id="edit-blog-description"
+                    style="width: 75%;"></textarea>
+                  <label class="mdl-textfield__label" for="edit-blog-description" style="width: 75%;"></label>
+                </div>
+              </form>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="save_button"
+                onclick="saveBlog()">
+                Save
+              </button>
+            </div>
+            <div id="new-blog-box" style="display: none;">
+              <h2>New Blog Post</h2>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="new-blog-title">
+                  <label class="mdl-textfield__label" for="new-blog-title">Title </label>
+                </div>
+              </form>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="new-blog-author">
+                  <label class="mdl-textfield__label" for="edit-blog-link">Author </label>
+                </div>
+              </form>
+              <!-- Floating Multiline Textfield -->
+              <h4>Description</h4>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield" id="textfield_input">
+                  <textarea class="mdl-textfield__input" type="text" rows="5" id="new-blog-description"
+                    style="width: 75%;"></textarea>
+                  <label class="mdl-textfield__label" for="new-blog-description" style="width: 75%;"></label>
+                </div>
+              </form>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="save_button"
+                onclick="newBlog()">
+                Create
+              </button>
+            </div>
+          </div>
+          <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" id="new_button_blogs"
+            onclick='openNewBlog()'>
+            <i class="material-icons">add</i>
+          </button>
+          <div class="mdl-tooltip mdl-tooltip--top " for="new_button_blogs">
+            New Blog
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div id="login_container" style="display: none;">
+    <div class="login-card mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">Admin Dashboard - Login</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        Please login to enter this website.
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a href="javascript:logIn();" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          Login
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="unauthorized" style="display: none;">
+    <div class="unauthorized-card mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">Unauthorized Login</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        You attempted to login with an improper account. If this is in error, please try reloading the page.
+      </div>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

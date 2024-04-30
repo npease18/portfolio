@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>LAX18's Homepage | Programs</title>
+    <script src="js/script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119545665-1"></script>
+    <style>
+        tr {
+            margin-bottom: 10px;
+        }
+        
+        td {
+            border-bottom-style: solid;
+        }
+    </style>
+</head>
+
+<body onload="onLoad();displayPrograms()">
+    <div id="entirenav">
+        <div id="navbarlogo">
+            <img src="img/LAX18.jpeg" width=64><span id="logofont" style="font-size: 68pt;">LAX18's Homepage</span>
+        </div>
+        <div id="nav">
+            <ul class="nav-bar" id="nav-bar">
+                <li class="nav-bar-li"><a href="index.html">Home</a></li>
+                <li class="nav-bar-li"><a href="sat.html">Satellite Imagery</a></li>
+                <li class="nav-bar-li"><a href="programs.html">Programs</a></li>
+                <li class="nav-bar-li"><a href="projects.html">Projects</li>
+  <li class="nav-bar-li"><a href="contact.html">Contact</a></li>
+                <li class="nav-bar-li" style="float: right;" id="logoutbutton"><a href='javascript:logOut();'>Log Out</a></li>
+                <li class="nav-bar-li" style="float: right;" id="loginbutton"><a href="javascript:logIn();">Log In</a></li>
+            </ul>
+        </div>
+    </div>
+    <h2 id="titles">Programs:</h2>
+    <table id="programs" style="border-style: solid;border-bottom-style: none;border-color: black;" width="100%">
+
+    </table>
+    <div style="position: fixed;right: 3px;bottom: 3px;background-color: white;font-family: 'Exo', sans-serif;font-size: 14pt;">
+        &copy; 2019 Nicholas Pease (LAX18)
+    </div>
+</body>
+
+</html>

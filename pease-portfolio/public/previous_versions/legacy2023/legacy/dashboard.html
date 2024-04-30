@@ -1,0 +1,294 @@
+<html>
+
+<head>
+    <title>LAX18's Homepage | Admin Dashboard</title>
+    <script src="js/script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/png" href="https://i.imgur.com/A385G44.png">
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119545665-1"></script>
+    <script src="js/script.js"></script>
+    <style>
+    td {
+            text-align: center;
+        }
+        
+        .tdregular {
+            border-style: solid;
+            border-color: black;
+        }
+        
+        input[type=text] {
+            border-style: none;
+            border-bottom: 1px solid black;
+            text-align: center
+        }
+        
+        textarea {
+            width: 75%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none;
+        }
+    }
+    </style>
+</head>
+
+<body onload="onLoad();verify();projectList();programList();blogList();satList();">
+    <div id="entirenav">
+        <div id="navbarlogo">
+            <img src="img/LAX18.jpeg" width=64><span id="logofont" style="font-size: 68pt;">LAX18's Homepage</span>
+        </div>
+        <div id="nav">
+            <ul class="nav-bar" id="nav-bar">
+                <li class="nav-bar-li"><a href="index.html">Home</a></li>
+                <li class="nav-bar-li"><a href="sat.html">Satellite Imagery</a></li>
+                <li class="nav-bar-li"><a href="programs.html">Programs</a></li>
+                <li class="nav-bar-li">
+                    <a href="projects.html">
+                     Projects
+               </li>
+               <li class="nav-bar-li"><a href="contact.html">Contact</a></li>
+                <li class="nav-bar-li" style="float: right;" id="logoutbutton"><a href='javascript:logOut();'>Log Out</a></li>
+                <li class="nav-bar-li" style="float: right;" id="loginbutton"><a href="javascript:logIn();">Log In</a></li>
+            </ul>
+        </div>
+    </div>
+    <h2 id="titles" style="text-align: center; font-size: 26pt;">Admin Dashboard</h2>
+    <table width="100%">
+        <tr>
+            <td width="25%" style="border-right-style: solid;border-left-style: solid;border-top-style: solid;border-color: black;">
+                Satellite Imagery
+            </td>
+            <td style="border-bottom-style: solid;border-color: black">
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table width="100%">
+        <tbody>
+            <tr>
+                <td class="tdregular">
+                    Add Satellite:<br> Satellite:
+                    <br>
+                    <select id="new-sat-name">
+                     <option value="NOAA 15">NOAA 15</option>
+                     <option value="NOAA 18">NOAA 18</option>
+                     <option value="NOAA 19">NOAA 19</option>
+                     <option value="Meteor M2">Meteor M2</option>
+                     <option value="Composite">Composite</option>
+                  </select><br> Direction:
+                    <br>
+                    <select id="new-sat-direction">
+                     <option value="Northbound">Northbound</option>
+                     <option value="Southbound">Southbound</option>
+                     <option value="N/A">N/A</option>
+                  </select>
+                    <br>Time (UTC):<br>
+                    <input id="new-sat-time" type="text"><br> Date
+                    <br>
+                    <input id="new-sat-date" type="text"><br> Image Name:<br>
+                    <input id="new-sat-image" type="text"><br> Max SNR:<br>
+                    <input id="new-sat-snr" type="text"><br> Max Elevation:<br>
+                    <input id="new-sat-elevation" type="text"><br> Processing Info:<br>
+                    <input id="new-sat-processing" type="text"><br>
+                    <input type="button" onclick="submitSat();" value="Submit">
+                    <br><br>
+                </td>
+                <td class="tdregular">
+                    Edit Satellite<br> Select Satellite Post to Edit:<br>
+                    <select id="sat-list" onchange="satOnChange();" onclick="satOnChange();">
+                  </select><br> Satellite:
+                    <br>
+                    <select id="edit-sat-name">
+                     <option value="NOAA 15">NOAA 15</option>
+                     <option value="NOAA 18">NOAA 18</option>
+                     <option value="NOAA 19">NOAA 19</option>
+                     <option value="Meteor M2">Meteor M2</option>
+                     <option value="Composite">Composite</option>
+                  </select><br> Direction:
+                    <br>
+                    <select id="edit-sat-direction">
+                     <option value="Northbound">Northbound</option>
+                     <option value="Southbound">Southbound</option>
+                     <option value="Composite">Composite</option>
+                  </select><br>
+                    <div class="hidden">
+                        <br>Time (UTC):<br>
+                        <input id="edit-sat-time" type="text"><br> Date
+                        <br>
+                        <input id="edit-sat-date" type="text"><br>
+                    </div>
+                    Image Name:<br>
+                    <input id="edit-sat-image" type="text"><br> Max SNR:<br>
+                    <input id="edit-sat-snr" type="text"><br> Max Elevation:<br>
+                    <input id="edit-sat-elevation" type="text"><br> Processing Info:<br>
+                    <input id="edit-sat-processing" type="text"><br>
+                    <input type="button" onclick="editSat();" value="Submit">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table width="100%">
+        <tr>
+            <td width="25%" style="border-right-style: solid;border-left-style: solid;border-top-style: solid;border-color: black;">
+                Projects
+            </td>
+            <td style="border-bottom-style: solid;border-color: black">
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table width="100%">
+        <tbody>
+            <tr>
+                <td class="tdregular">
+                    Add Project:<br><br> Title:
+                    <br>
+                    <input id="new-project-title" type="text"><br> Link:
+                    <br>
+                    <input id="new-project-link" type="text"><br> Status:
+                    <br>
+                    <select id="new-project-status">
+                     <option value="active">Active</option>
+                     <option value="inactive">Idle</option>
+                     <option value="canceled">Canceled</option>
+                     <option value="depracated">Depracated</option>
+                  </select>
+                    <br> Description:
+                    <br>
+                    <textarea id="new-project-description">
+                  </textarea>
+                    <br>
+                    <input type="button" onclick="submitProject();" value="Submit">
+                    <br><br>
+                </td>
+                <td class="tdregular">
+                    Select Project to Edit:<br>
+                    <select id="project-list" onchange="projectOnChange();" onclick="projectOnChange();">
+                  </select><br> Link:
+                    <br>
+                    <input id="edit-project-link" type="text"><br> Status:
+                    <br>
+                    <select id="edit-project-status">
+                     <option value="active">Active</option>
+                     <option value="inactive">Idle</option>
+                     <option value="canceled">Canceled</option>
+                     <option value="depracated">Depracated</option>
+                  </select>
+                    <br> Description:
+                    <br>
+                    <textarea id="edit-project-description">
+                  </textarea>
+                    <br>
+                    <input type="button" onclick="editProject();" value="Submit">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br><br>
+    <table width="100%">
+        <tr>
+            <td width="25%" style="border-right-style: solid;border-left-style: solid;border-top-style: solid;border-color: black;">
+                Programs
+            </td>
+            <td style="border-bottom-style: solid;border-color: black">
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table width="100%">
+        <tbody>
+            <tr>
+                <td class="tdregular">
+                    Add Program:<br><br> Title:
+                    <br>
+                    <input id="new-program-title" type="text"><br> Link:
+                    <br>
+                    <input id="new-program-link" type="text"><br> Image Link:<br>
+                    <input id="new-program-imglink" type="text"><br> Author
+                    <br>
+                    <input id="new-program-author" type="text"><br> Type
+                    <br>
+                    <input id="new-program-type" type="text"><br> Description:
+                    <br>
+                    <textarea id="new-program-description">
+                  </textarea>
+                    <br>
+                    <input type="button" onclick="submitProgram();" value="Submit">
+                    <br><br>
+                </td>
+                <td class="tdregular">
+                    Select Program to Edit:<br>
+                    <select id="program-list" onchange="programOnChange();" onclick="programOnChange();">
+                  </select><br> Link:
+                    <br>
+                    <input id="edit-program-link" type="text"><br> Image Link:<br>
+                    <input id="edit-program-imglink" type="text"><br> Author
+                    <br>
+                    <input id="edit-program-author" type="text"><br> Type
+                    <br>
+                    <input id="edit-program-type" type="text"><br> Description:
+                    <br>
+                    <textarea id="edit-program-description">
+                  </textarea>
+                    <br>
+                    <input type="button" onclick="editProgram();" value="Submit">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br><br>
+    <table width="100%">
+        <tr>
+            <td width="25%" style="border-right-style: solid;border-left-style: solid;border-top-style: solid;border-color: black;">
+                Blogs
+            </td>
+            <td style="border-bottom-style: solid;border-color: black">
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table width="100%">
+        <tbody>
+            <tr>
+                <td class="tdregular">
+                    Add blog:<br><br> Title:
+                    <br>
+                    <input id="new-blog-title" type="text"><br> Author
+                    <br>
+                    <input id="new-blog-author" type="text"><br> Post:
+                    <br>
+                    <textarea id="new-blog-post">
+                  </textarea>
+                    <br>
+                    <input type="button" onclick="submitBlog();" value="Submit">
+                    <br><br>
+                </td>
+                <td class="tdregular">
+                    Select Blog to Edit:<br>
+                    <select id="blog-list" onchange="blogOnChange();" onclick="blogOnChange();">
+                  </select><br> Author
+                    <br>
+                    <input id="edit-blog-author" type="text"><br> Post:
+                    <br>
+                    <textarea id="edit-blog-post">
+                  </textarea>
+                    <br>
+                    <input type="button" onclick="editBlog();" value="Submit">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<div style="position: fixed;right: 3px;bottom: 3px;background-color: white;font-family: 'Exo', sans-serif;font-size: 14pt;">
+    &copy; 2019 Nicholas Pease (LAX18)
+</div>
+
+</html>

@@ -1,0 +1,332 @@
+<html>
+<head>
+<title>LAX18's Homepage</title>
+<script src="../js/script.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="icon" type="image/png" href="https://i.imgur.com/A385G44.png">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119545665-1"></script>
+<style>
+  td {vertical-align: bottom;text-align: center;}
+  </style>
+  </head>
+<body onload="onLoad();">
+ <div id="entirenav">
+         <div id="navbarlogo">
+            <img src="../img/LAX18.jpeg" width=64><span id="logofont" style="font-size: 68pt;">LAX18's Homepage</span>
+         </div>
+         <div id="nav">
+            <ul class="nav-bar" id="nav-bar">
+               <li class="nav-bar-li"><a href="../index.html">Home</a></li>
+               <li class="nav-bar-li"><a href="../programs.html">Programs</a></li>
+               <li class="nav-bar-li"><a href="../projects.html">Projects</li>
+               <li class="nav-bar-li"><a href="../contact.html">Contact</a></li>
+               <li class="nav-bar-li"><a href="../libraries/index.html">Libraries</a></li>
+               <li class="nav-bar-li" style="float: right;" id="logoutbutton"><a href='javascript:logOut();'>Log Out</a></li>
+               <li class="nav-bar-li" style="float: right;" id="loginbutton"><a href="javascript:logIn();">Log In</a></li>
+            </ul>
+         </div>
+      </div>
+    <span id="titles" style="font-size: 20pt;text-align: right">NOS Graphics Library</span>
+<p id="titles" >Usage / Installation:</p>
+<p>To use this library, download it from **insert link** and transfer the NOSLIB program to your calc. Then, in your header, you want to add the following code:</p>
+<p>AsmComp(NOSLIB)</p>
+<p>This will add your program in the compilation process. After this, you only need to use each command if you need it as described below.</p>
+<p>&nbsp;</p>
+<p id="titles" >Global Variables:</p>
+<p>IN - General Purpose Command Input (100 bytes)</p>
+<p>OUT - General Purpose Command Output (50 bytes)</p>
+<p>NOSIN - Secondary Command Input (50 bytes)</p>
+<p>NOS - Global Command Data Storage</p>
+<p>&nbsp;</p>
+<hr />
+<p id="titles" >Lbl SETUP</p>
+<p>Sets up the canvas screen and sets the global library variables.</p>
+<p id="titles" >Inputs:</p>
+<table style="border-style: solid;border-color: black;">
+<tbody>
+<tr>
+<td>Entry:</td>
+<td>Size:</td>
+<td>Setting:</td>
+</tr>
+<tr>
+<td>IN+0</td>
+<td>1 byte</td>
+<td>BG Color 1</td>
+</tr>
+<tr>
+<td>IN+1</td>
+<td>1 byte</td>
+<td>BG Color 2</td>
+</tr>
+<tr>
+<td>IN+2</td>
+<td>1 byte</td>
+<td>Text Color 1</td>
+</tr>
+<tr>
+<td>IN+3</td>
+<td>1 byte</td>
+<td>Text Color 2</td>
+</tr>
+</tbody>
+</table>
+<p id="titles">Outputs: None</p>
+<p>&nbsp;</p>
+<p id="titles">Variables Used:</p>
+<p>NOS - 4 bytes - Global color definitions</p>
+<p>IN - 4 bytes - Input</p>
+<p>A - Overwritten and not restored</p>
+<p>&nbsp;</p>
+<p id="titles">Notes:</p>
+<p>The background color 1 is the primary background color, where as the secondary is the one used for shapes, the status bar, and lines. The text color 1 is for text on the background color 1 background, and text color 2 is for text on background color 2.</p>
+<hr />
+<p id="titles">Lbl STATUSBAR</p>
+<p>Displays status bar, with global color index, at the top of the screen with the specified string.</p>
+<p id="titles">Inputs:</p>
+<table style="border-style: solid;border-color: black;">
+<tbody>
+<tr>
+<td>Entry:</td>
+<td>Size:</td>
+<td>Setting:</td>
+</tr>
+<tr>
+<td>IN+0</td>
+<td>30 bytes</td>
+<td>Status Bar Title</td>
+</tr>
+<tr>
+<td>IN+40</td>
+<td>1 byte</td>
+<td>Set for null byte (Set to 0)</td>
+</tr>
+</tbody>
+</table>
+<p id="titles">Outputs: None</p>
+<p>&nbsp;</p>
+<p id="titles">Variables Used:</p>
+<p>IN - 30 bytes - Input</p>
+<p>NOS - 4 bytes - Color Definitions</p>
+<p>NOSIN - 6 bytes - For subprogram</p>
+<p>Str1 - For displaying string, overwritten and not restored</p>
+<hr />
+<p>&nbsp;</p>
+<p id="titles" >Lbl INPUT</p>
+<p>Input routine for drawing canvas.</p>
+<p id="titles" >Inputs:</p>
+<table style="border-style: solid;border-color: black;">
+<tbody>
+<tr>
+<td>Entry:</td>
+<td>Size:</td>
+<td>Setting:</td>
+</tr>
+<tr>
+<td>IN+0</td>
+<td>3 bytes</td>
+<td>X Position of box</td>
+</tr>
+<tr>
+<td>IN+3</td>
+<td>3 bytes</td>
+<td>Y Position of box</td>
+</tr>
+<tr>
+<td>IN+6</td>
+<td>3 bytes</td>
+<td>Borders for box (1 for borders, 0 for no borders)</td>
+</tr>
+<tr>
+<td>IN+9</td>
+<td>3 bytes</td>
+<td>Spaces format (0 to disallow, 1 to allow)</td>
+</tr>
+  <tr>
+<td>IN+12</td>
+<td>3 bytes</td>
+<td>Input format (0 for letters, 1 for numbers)</td>
+</tr>
+  <tr>
+<td>IN+15</td>
+<td>3 bytes</td>
+<td>Max length (leave blank for auto)</td>
+</tr>
+  <tr>
+<td>IN+18</td>
+<td>3 bytes</td>
+<td>Lock Case (1 prevents changing character set, 0 allows)</td>
+</tr>
+</tbody>
+</table>
+<p id="titles">Outputs:</p>
+  <table style="border-style: solid;border-color: black;">
+    <tbody>
+    <tr>
+    <td>Entry:</td>
+      <td>Size:</td>
+      <td>Description:</td>
+    </tr>
+    <tr>
+    <td>OUT+0</td>
+      <td>Max length specified (or use length(OUT)</td>
+      <td>String returned from input (EXIT if CLEAR is pressed)</td>
+    </tr>
+      </tbody>
+  </table>
+<p>&nbsp;</p>
+<p id="titles">Variables Used:</p>
+<p>NOS - 4 bytes - Global color definitions</p>
+<p>IN - 21 bytes - Input</p>
+<p>A - Overwritten and not restored</p>
+<p>Str2 - Overwritten and not restored</p>
+  <p>Str3 - Overwritten and not restored</p>
+  <p>Str4 - Overwritten and not restored</p>
+  <p>G - Overwritten and not restored</p>
+  
+<hr />
+<p>&nbsp;</p>
+<p id="titles" >Lbl DIALOG</p>
+<p>Displays smaller window with custom status bar.</p>
+<p id="titles" >Inputs:</p>
+<table style="border-style: solid;border-color: black;">
+<tbody>
+<tr>
+<td>Entry:</td>
+<td>Size:</td>
+<td>Setting:</td>
+</tr>
+<tr>
+<td>IN+0</td>
+<td>10 bytes</td>
+<td>Status bar title</td>
+</tr>
+<tr>
+<td>IN+10</td>
+<td>1 bytes</td>
+<td>null Byte</td>
+</tr>
+<tr>
+<td>IN+11</td>
+<td>3 bytes</td>
+<td>X position</td>
+</tr>
+<tr>
+<td>IN+14</td>
+<td>3 bytes</td>
+<td>Y position</td>
+</tr>
+  <tr>
+<td>IN+17</td>
+<td>3 bytes</td>
+<td>Width of box</td>
+</tr>
+  <tr>
+<td>IN+20</td>
+<td>3 bytes</td>
+<td>Height of box</td>
+</tr>
+</tbody>
+</table>
+  <p id="titles">Outputs: None</p>
+<p>&nbsp;</p>
+<p id="titles">Variables Used:</p>
+<p>NOS - 4 bytes - Global color definitions</p>
+<p>IN - 21 bytes - Input</p>
+<p>Str1 - Overwritten and not restored</p>
+  <hr />
+<p>&nbsp;</p>
+<p id="titles" >Lbl PROMPT</p>
+<p>Similar to DIALOG, however has built in input routine.</p>
+<p id="titles" >Inputs:</p>
+<table style="border-style: solid;border-color: black;">
+<tbody>
+<tr>
+<td>Entry:</td>
+<td>Size:</td>
+<td>Setting:</td>
+</tr>
+<tr>
+<td>IN+0</td>
+<td>10 bytes</td>
+<td>Mini Status bar title</td>
+</tr>
+<tr>
+<td>IN+10</td>
+<td>1 bytes</td>
+<td>null Byte</td>
+</tr>
+<tr>
+<td>IN+11</td>
+<td>3 bytes</td>
+<td>X position</td>
+</tr>
+<tr>
+<td>IN+14</td>
+<td>3 bytes</td>
+<td>Y position</td>
+</tr>
+  <tr>
+<td>IN+17</td>
+<td>3 bytes</td>
+<td>Width of box</td>
+</tr>
+  <tr>
+<td>IN+20</td>
+<td>3 bytes</td>
+<td>Height of box</td>
+</tr>
+<tr>
+<td>IN+23</td>
+<td>3 bytes</td>
+<td>Spaces format (0 to disallow, 1 to allow)</td>
+</tr>
+<tr>
+<td>IN+26</td>
+<td>3 bytes</td>
+<td>Input format (0 for letters, 1 for numbers)</td>
+</tr>
+<tr>
+<td>IN+29</td>
+<td>3 bytes</td>
+<td>Max length (leave blank for auto)</td>
+</tr>
+  <tr>
+<td>IN+32</td>
+<td>3 bytes</td>
+<td>Lock Case (1 prevents changing character set, 0 allows)</td>
+</tr>
+</tbody>
+</table>
+<p id="titles">Outputs:</p>
+  <table style="border-style: solid;border-color: black;">
+    <tbody>
+    <tr>
+    <td>Entry:</td>
+      <td>Size:</td>
+      <td>Description:</td>
+    </tr>
+    <tr>
+    <td>OUT+0</td>
+      <td>Max length specified (or use length(OUT))</td>
+      <td>String returned from input (EXIT if CLEAR is pressed)</td>
+    </tr>
+      </tbody>
+  </table>
+<p>&nbsp;</p>
+<p id="titles">Variables Used:</p>
+<p>NOS - 4 bytes - Global color definitions</p>
+<p>IN - 21 bytes - Input</p>
+<p>A - Overwritten and not restored</p>
+  <p>Str1 - Overwritten and not restored</p>
+<p>Str2 - Overwritten and not restored</p>
+  <p>Str3 - Overwritten and not restored</p>
+  <p>Str4 - Overwritten and not restored</p>
+  <p>G - Overwritten and not restored</p>
+ <div style="position: fixed;right: 3px;bottom: 3px;background-color: white;font-family: 'Exo', sans-serif;font-size: 14pt;">
+  &copy; 2019 Nicholas Pease (LAX18)
+  </div>
+  </body>
+</html>

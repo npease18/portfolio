@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>LAX18's Homepage | Projects</title>
+    <script src="js/script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/png" href="https://i.imgur.com/A385G44.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119545665-1"></script>
+</head>
+
+<body onload="onLoad();displayProjects();">
+    <div id="entirenav">
+        <div id="navbarlogo">
+            <img src="img/LAX18.jpeg" width=64><span id="logofont" style="font-size: 68pt;">LAX18's Homepage</span>
+        </div>
+        <div id="nav">
+            <ul class="nav-bar" id="nav-bar">
+                <li class="nav-bar-li"><a href="index.html">Home</a></li>
+                <li class="nav-bar-li"><a href="sat.html">Satellite Imagery</a></li>
+                <li class="nav-bar-li"><a href="programs.html">Programs</a></li>
+                <li class="nav-bar-li"><a href="projects.html">Projects</li>
+  <li class="nav-bar-li"><a href="contact.html">Contact</a></li>
+                <li class="nav-bar-li" style="float: right;" id="logoutbutton"><a href='javascript:logOut();'>Log Out</a></li>
+                <li class="nav-bar-li" style="float: right;" id="loginbutton"><a href="javascript:logIn();">Log In</a></li>
+            </ul>
+        </div>
+    </div>
+    <h2 id="titles">Projects</h2>
+    <div id="projects">
+
+    </div>
+    <div style="position: fixed;right: 3px;bottom: 3px;background-color: white;font-family: 'Exo', sans-serif;font-size: 14pt;">
+        &copy; 2019 Nicholas Pease (LAX18)
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,212 @@
+
+  /* Exact width */
+@media (width: 360px) {
+    .square-left {
+        position: absolute;
+        left: 2%;
+        width: 40%;
+        top: 2%;
+        height: 96%;
+        background-color: white;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+        overflow: auto;
+    }
+  
+    .square-right {
+        position: absolute;
+        right: 2%;
+        width: 54%;
+        top: 2%;
+        height: 96%;
+        background-color: white;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+        text-align: center;
+    }
+    #save_button {
+        position: absolute;
+        bottom: 5%;
+    }
+    #textfield_input {
+        margin: auto;
+        position: absolute;
+        left: 25%;
+    }
+    #new_button {
+        position: absolute;
+        bottom: 5%;
+    }
+  }
+  
+  /* Minimum width */
+  @media (min-width: 35rem) {
+    .square-left {
+        position: absolute;
+        left: 2%;
+        width: 40%;
+        top: 2%;
+        height: 96%;
+        background-color: white;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+        overflow: auto;
+    }
+  
+    .square-right {
+        position: absolute;
+        right: 2%;
+        width: 54%;
+        top: 2%;
+        height: 96%;
+        background-color: white;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+        text-align: center;
+    }
+
+    #save_button {
+        position: absolute;
+        bottom: 5%;
+    }
+    #textfield_input {
+        width: 75%;
+        margin: auto;
+        position: absolute;
+        left: 25%;
+    }
+    #new_button {
+        position: absolute;
+        bottom: 5%;
+    }
+  }
+  
+  /* Maximum width */
+  @media (max-width: 50rem) {
+    .square-left {
+        background-color: white;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+        overflow: auto;
+    }
+
+    .square-right {
+        background-color: white;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+        text-align: center;
+    }
+    #save_button {
+        margin-bottom: 30px;
+    }
+
+    #textfield_input {
+        width: 75%;
+        margin: auto;
+    }
+    #new_button {
+        margin-bottom: 30px;
+    }
+  }
+
+#new_button_projects {
+    position: absolute;
+    right: 3%;
+    bottom: 3.5%;
+    z-index: 1;
+}  
+
+  #projects_tab {
+      width: 100%;
+      height: 100%;
+      ;
+  }
+
+  .project-card {
+      width: 90%;
+      margin: 10px;
+  }
+
+  #new_button_program {
+    position: absolute;
+    right: 3%;
+    bottom: 3.5%;
+    z-index: 1;
+}  
+
+#new_button_blogs {
+    position: absolute;
+    right: 3%;
+    bottom: 3.5%;
+    z-index: 1;
+}  
+
+  #program_tab {
+      width: 100%;
+      height: 100%;
+      ;
+  }
+
+  .program-card {
+      width: 90%;
+      margin: 10px;
+  }
+
+  .blog-card {
+    width: 90%;
+    margin: 10px;
+}
+
+  .login-card {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      height: 20px;
+      text-align: center;
+  }
+
+  .unauthorized-card {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      height: 20px;
+      text-align: center;
+  }
+
+  #login_container {
+      height: 100%;
+  }
+
+  #main_content {
+      height: 100%;
+  }
+
+  #loading {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+  }
+
+  .active {
+      color: green;
+  }
+
+  .inactive {
+      color: orange;
+  }
+
+  .canceled {
+      color: red;
+  }
+
+  .depracated {
+      color: yellow;
+  }
+
+  .hidden {
+      display: none;
+  }
