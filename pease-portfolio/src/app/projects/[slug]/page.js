@@ -18,7 +18,7 @@ function Page({params}) {
         return (
             <div className="ml-5 mt-5 mr-5 text-center">
                 <div className="font-bold text-[46px]">Project Does Not Exist</div>
-                <a href="/projects" className="text-[24px] underline">Return to Project\&apos;s List</a>
+                <a href="/projects" className="text-[24px] underline">Return to Project&apos;s List</a>
             </div>
         )
     }  
