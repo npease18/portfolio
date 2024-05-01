@@ -6,7 +6,8 @@
         "github_repo": "ChatMaps",
         "isPublic": true,
         "hasGitea": false,
-        "hasGithub": true
+        "hasGithub": true,
+        "hasCustomPage": "chatmaps"
     },
     "Aviation Assistant V1": {
         "description": "The Aviation Assistant V1 is an all-in-one ADS-B processing device that includes an integrated touchscreen and speaker for on-the-go plane tracking.",
@@ -15,7 +16,8 @@
         "gitea_repo": "AviationAssistant",
         "isPublic": true,
         "hasGitea": true,
-        "hasGithub": false
+        "hasGithub": false,
+        "hasCustomPage": false
     },
     "Aviation Assistant V2": {
         "description": "The Aviation Assistant V2 is a revamped version of the Aviation Assistant sporting a larger battery/runtime in addition to a more portable footprint for use in the field.",
@@ -24,7 +26,8 @@
         "gitea_repo": "AviationAssistantV2",
         "isPublic": true,
         "hasGitea": true,
-        "hasGithub": false
+        "hasGithub": false,
+        "hasCustomPage": false
 
     },
     "Aubuchon Register Tool": {
@@ -34,7 +37,8 @@
         "gitea_repo": "Aubuchon-book-generator",
         "isPublic": false,
         "hasGitea": true,
-        "hasGithub": false
+        "hasGithub": false,
+        "hasCustomPage": false
     },
     "Personal Portfolio": {
         "description": "My personal portfolio is my first React and next.js project that also serves to showcase my personal projects and other career development accomplishments. This is hosted on my personal server and stands as a lesson in both web development as well as backend design.",
@@ -42,6 +46,7 @@
         "gitea_repo": "portfolio",
         "isPublic": false,
         "hasGitea": true,
-        "hasGithub": false
+        "hasGithub": false,
+        "hasCustomPage": false
     }
 }

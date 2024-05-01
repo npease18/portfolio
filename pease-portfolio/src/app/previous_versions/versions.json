@@ -1,0 +1,35 @@
+{
+    "legacy": {
+        "name": "Legacy (Pre 2021)",
+        "start": 1526860801000,
+        "end": 1624492801000,
+        "url": "https://legacy.nicholaspease.com/index.html",
+        "description": "This edition of the website was the first to be published. At first, it was a static HTML, JS and CSS website where all information was hardcoded in. However, over time, I added dynamic site updates via Google Firebase that allowed the submission of Software Programs (mostly calculator applications), Weather Satellite Images (a hobby of mine), Project Statuses (a list that was eventually cleaned out) and Blog Posts (viewable on the home page). This was all configurable by a user dashboard authenticated with Google Firebase and allowed myself to easily update the website. This site was retired in favor of a more modern design.",
+        "language": "HTML,JS,CSS [Custom]"
+    },
+    "legacy2021": {
+        "name": "2021 Edition",
+        "start": 1624492801000,
+        "end": 1648166401000,
+        "url": "https://legacy2021.nicholaspease.com/index.html",
+        "description": "This edition of the website was created using Nicepage in a bid to modernize my homepage. Over time, a Firebase enabled projects explorer was added, but the feature was not completed due to the desire for a better homepage. This website was eventually retired for another Nicepage website.",
+        "language": "HTML,JS,CSS [Page Builder]"
+    },
+    "legacy2023": {
+        "name": "2023 Edition",
+        "start": 1648166401000,
+        "end": 1707868801000,
+        "url": "https://legacy2023.nicholaspease.com/index.html",
+        "description": "This edition of the website was created using Nicepage to showcase more of my competencies. This was the first edition of the website to depart from the historical Firebase integration and was instead entirely static. This website was retired in favor of a return to the original concept of the website being created by myself. I also wished to learn React and NextJS.",
+        "language": "HTML,JS,CSS [Page Builder]"
+    },
+    "current": {
+        "name": "2024 Edition",
+        "start": 1707868801000,
+        "end": -1,
+        "url": "https://nicholaspease.com/",
+        "description": "This edition of the website was my first introduction to React and NextJs. It is mostly static, with information given in the form of JSON files as opposed to a Firebase database. I am in the process of moving over most of my project information here in addition to consolidating my documentation, professional development paperwork, and all other related areas.",
+        "language": "React + NextJs",
+        "sourceURL": "https://gitea.nicholaspease.com/npease/portfolio"
+    }
+}

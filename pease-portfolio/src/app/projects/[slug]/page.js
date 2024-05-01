@@ -1,9 +1,13 @@
 import Projects from "../../projects.json"
+import { redirect } from "next/navigation";
 
 function Page({params}) {
     var name = params.slug.replaceAll("%20", " ")
     if (name in Projects) {
         var Project = Projects[name]
+        if (Project.hasCustomPage) {
+            redirect("/projects/custom/"+Project.hasCustomPage, "replace")
+        }
         return (
             <div className="ml-5 mt-5 mr-5">
                 {Project.img && <img className="mb-5" src={"/images/"+Project.img}/>}
