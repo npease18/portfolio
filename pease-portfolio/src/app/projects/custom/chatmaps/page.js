@@ -203,7 +203,7 @@ function ImageCarousel() {
                         <span className="cursor-pointer z-10 bg-white" onClick={() => {instanceRef.current?.next()}}><ArrowForwardIosIcon sx={{color: grey[900]}} fontSize="large"/></span>
                     </div>
                     <div className='mt-5 text-center p-2 bg-slate-900 rounded-md italic relative top-[-35px]'>
-                        This is the homepage of the application, featuring a map with the nearby rooms and users saved rooms, as well as a sidebar. The sidebar allows the user to navigate around the rooms, the friends they have, any DM's they have sent or received, as well as accept friend requests.
+                        This is the homepage of the application, featuring a map with the nearby rooms and users saved rooms, as well as a sidebar. The sidebar allows the user to navigate around the rooms, the friends they have, any DM&apos;s they have sent or received, as well as accept friend requests.
                     </div>
                 </div>
                 <div className={`keen-slider__slide ${loaded ? 'block' : 'hidden'}`}>
@@ -213,7 +213,7 @@ function ImageCarousel() {
                         <span className="cursor-pointer z-10 bg-white" onClick={() => {instanceRef.current?.next()}}><ArrowForwardIosIcon sx={{color: grey[900]}} fontSize="large"/></span>
                     </div>
                     <div className='mt-5 text-center p-2 bg-slate-900 rounded-md italic relative top-[-35px]'>
-                        This is the chat room page. The user can see the messages in the room, as well as send messages. The user can also see the users in the room, as well as the room's topic and location. The user may also choose to save this room for later here.
+                        This is the chat room page. The user can see the messages in the room, as well as send messages. The user can also see the users in the room, as well as the room&apos;s topic and location. The user may also choose to save this room for later here.
                     </div>
                 </div>
                 <div className={`keen-slider__slide ${loaded ? 'block' : 'hidden'}`}>
