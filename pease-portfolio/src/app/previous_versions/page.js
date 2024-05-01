@@ -20,7 +20,7 @@ function PriorWebsiteVersion({version}) {
                 {version.description}
             </div>
             <div className=" mt-2"><span className="font-bold">Language: </span>{version.language}</div>
-            {version.sourceURL && (<div className="mt-2"><span className="font-bold">Source Code:</span> <a href={version.sourceURL} target="_blank" className="hover:underline">{version.sourceURL}</a></div>)}
+            {version.sourceURL && (<div className="mt-2 break-all"><span className="font-bold">Source Code:</span> <a href={version.sourceURL} target="_blank" className="hover:underline">{version.sourceURL}</a></div>)}
         </div>
     )
 }
