@@ -1,3 +1,11 @@
+"use client"
+import 'keen-slider/keen-slider.min.css'
+import { useKeenSlider } from 'keen-slider/react'
+
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { grey } from '@mui/material/colors'
+import {useEffect, useState} from 'react'
 
 var chatmapsFileList = [
     {
@@ -120,7 +128,7 @@ function FileList() {
     }
 
     return (
-        <div className="mt-5 bg-slate-900 mr-5 rounded-md p-3">
+        <div className="mt-5 bg-slate-900 mr-2 rounded-md p-3">
             <h2 className="font-bold text-[24px]">ChatMaps Files</h2>
             <table className="w-[100%] mt-2 mr-2 ml-2">
                 <thead>
@@ -135,6 +143,93 @@ function FileList() {
             </table>
         </div>
     )
+}
+
+function ImageCarousel() {
+    const [loaded, setLoaded] = useState(false)
+    const [sliderRef, instanceRef] = useKeenSlider(
+        {
+            loop: true,
+            created: () => setLoaded(true)
+        },
+        [
+            (slider) => {
+                let timeout
+                let mouseOver = false
+                function clearNextTimeout() {
+                  clearTimeout(timeout)
+                }
+                function nextTimeout() {
+                  clearTimeout(timeout)
+                  if (mouseOver) return
+                  timeout = setTimeout(() => {
+                    slider.next()
+                  }, 5000)
+                }
+                slider.on("created", () => {
+                  slider.container.addEventListener("mouseover", () => {
+                    mouseOver = true
+                    clearNextTimeout()
+                  })
+                  slider.container.addEventListener("mouseout", () => {
+                    mouseOver = false
+                    nextTimeout()
+                  })
+                  nextTimeout()
+                })
+                slider.on("dragStarted", clearNextTimeout)
+                slider.on("animationEnded", nextTimeout)
+                slider.on("updated", nextTimeout)
+              },
+        ]
+      )
+    return (
+        <div className='ml-2 mr-5 mt-5 p-3'>
+            <div ref={sliderRef} className="keen-slider">
+                <div className={`keen-slider__slide ${loaded ? 'block' : 'hidden'}`}>
+                    <img src="/project_files/chatmaps/screenshots/ss1.png"/>
+                    <div className="relative top-[-35px] left-[5px]">
+                        <span className="cursor-pointer z-10 bg-white" onClick={() => {instanceRef.current?.prev()}}><ArrowBackIosIcon sx={{color: grey[900]}} fontSize="large"/></span>
+                        <span className="cursor-pointer z-10 bg-white" onClick={() => {instanceRef.current?.next()}}><ArrowForwardIosIcon sx={{color: grey[900]}} fontSize="large"/></span>
+                    </div>
+                    <div className='mt-5 text-center p-2 bg-slate-900 rounded-md italic relative top-[-35px]'>
+                        The homepage of the application. The user is logged in on this demo so they can simply return to the application without having to login again. This page also displays the number of rooms nearby.
+                    </div>
+                </div>
+                <div className={`keen-slider__slide ${loaded ? 'block' : 'hidden'}`}>
+                    <img src="/project_files/chatmaps/screenshots/ss2.png"/>
+                    <div className="relative top-[-35px] left-[5px]">
+                        <span className="cursor-pointer z-10 bg-white" onClick={() => {instanceRef.current?.prev()}}><ArrowBackIosIcon sx={{color: grey[900]}} fontSize="large"/></span>
+                        <span className="cursor-pointer z-10 bg-white" onClick={() => {instanceRef.current?.next()}}><ArrowForwardIosIcon sx={{color: grey[900]}} fontSize="large"/></span>
+                    </div>
+                    <div className='mt-5 text-center p-2 bg-slate-900 rounded-md italic relative top-[-35px]'>
+                        This is the homepage of the application, featuring a map with the nearby rooms and users saved rooms, as well as a sidebar. The sidebar allows the user to navigate around the rooms, the friends they have, any DM's they have sent or received, as well as accept friend requests.
+                    </div>
+                </div>
+                <div className={`keen-slider__slide ${loaded ? 'block' : 'hidden'}`}>
+                    <img src="/project_files/chatmaps/screenshots/ss3.png"/>
+                    <div className="relative top-[-35px] left-[5px]">
+                        <span className="cursor-pointer z-10 bg-white" onClick={() => {instanceRef.current?.prev()}}><ArrowBackIosIcon sx={{color: grey[900]}} fontSize="large"/></span>
+                        <span className="cursor-pointer z-10 bg-white" onClick={() => {instanceRef.current?.next()}}><ArrowForwardIosIcon sx={{color: grey[900]}} fontSize="large"/></span>
+                    </div>
+                    <div className='mt-5 text-center p-2 bg-slate-900 rounded-md italic relative top-[-35px]'>
+                        This is the chat room page. The user can see the messages in the room, as well as send messages. The user can also see the users in the room, as well as the room's topic and location. The user may also choose to save this room for later here.
+                    </div>
+                </div>
+                <div className={`keen-slider__slide ${loaded ? 'block' : 'hidden'}`}>
+                    <img src="/project_files/chatmaps/screenshots/ss4.png"/>
+                    <div className="relative top-[-35px] left-[5px]">
+                        <span className="cursor-pointer z-10 bg-white" onClick={() => {instanceRef.current?.prev()}}><ArrowBackIosIcon sx={{color: grey[900]}} fontSize="large"/></span>
+                        <span className="cursor-pointer z-10 bg-white" onClick={() => {instanceRef.current?.next()}}><ArrowForwardIosIcon sx={{color: grey[900]}} fontSize="large"/></span>
+                    </div>
+                    <div className='mt-5 text-center p-2 bg-slate-900 rounded-md italic relative top-[-35px]'>
+                        This is the users profile. The user can see their saved rooms, as well as any profile data that they have saved. Here they can also modify their profile including changing their profile picture, username, display name, and biography.
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+      )
 }
 
 export default function Home() {
@@ -156,6 +251,7 @@ export default function Home() {
             </section>
             <section className="grid max-md:grid-cols-1 grid-cols-2">
                 <FileList/>
+                <ImageCarousel/>
             </section>
         </div>
     </div>)
