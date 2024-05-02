@@ -24,11 +24,11 @@ export function Footer() {
 export function Navigation() {
   return (
     <div className="flex justify-center w-full mb-5">
-        <div className="mt-5 bg-slate-900 rounded-lg w-full h-[35px] self-center p-1 ml-5 mr-5">
-          <a href="/" className="ml-5 hover:font-bold">Home</a>
-          <a href="/projects" className="ml-5 hover:font-bold">Projects</a>
-          <a href="/previous_versions" className="ml-5 hover:font-bold">Previous Editions</a>
-          <a href="/server" className="ml-5 hover:font-bold">Server Administration</a>
+        <div className="mt-5 bg-slate-900 rounded-lg w-full self-center p-1 ml-5 mr-5">
+          <a href="/" className="ml-5 hover:font-bold break-inside-avoid">Home</a>
+          <a href="/projects" className="ml-5 hover:font-bold break-inside-avoid">Projects</a>
+          <a href="/previous_versions" className="ml-5 hover:font-bold break-inside-avoid">Previous Editions</a>
+          <a href="/server" className="ml-5 hover:font-bold break-inside-avoid">Server Administration</a>
         </div>
       </div>
   );
