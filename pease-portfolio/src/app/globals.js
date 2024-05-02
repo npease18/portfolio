@@ -28,6 +28,7 @@ export function Navigation() {
           <a href="/" className="ml-5 hover:font-bold">Home</a>
           <a href="/projects" className="ml-5 hover:font-bold">Projects</a>
           <a href="/previous_versions" className="ml-5 hover:font-bold">Previous Editions</a>
+          <a href="/server" className="ml-5 hover:font-bold">Server Administration</a>
         </div>
       </div>
   );
