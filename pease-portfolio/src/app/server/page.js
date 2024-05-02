@@ -23,7 +23,7 @@ export default function Home() {
                 <div className="font-bold text-[24px]">RAM (Usage)</div>
                 <div data-netdata="mem.committed" data-chart-library="dygraph" data-width="100%" data-height="200" data-after="-600" data-legend="no" data-title="" data-dygraph-drawgrid="false"/>
             </div>
-            <Script>
+            <Script id="something">
                 {`var netdataNoBootstrap = true;`}
             </Script>
             <Script src="https://netdata.nicholaspease.com/dashboard.js"/>
