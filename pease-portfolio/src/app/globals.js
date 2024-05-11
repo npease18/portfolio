@@ -15,7 +15,7 @@ export function Footer() {
     return (
       <div className="flex justify-center w-full mb-5">
         <div className="mt-5 bg-slate-900 rounded-lg w-full h-[85px] self-center text-center p-5 ml-5 mr-5">
-          &copy; 2024 Nicholas Pease. <br/>Last Updated on 15 FEB 2024.
+          &copy; 2024 Nicholas Pease. <br/>Last Updated on 10 May 2024.
         </div>
       </div>
     );

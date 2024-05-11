@@ -21,7 +21,7 @@ function AboutMe() {
             to date to the best of my ability. <br/>
             </div>
             <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ timedatectl --lastupdated<br/>
-            This website was last updated on Thursday, February 15th 2024.<br/>
+            This website was last updated on Friday, May 10th 2024.<br/>
             <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ <span className="animate-blink"> </span>
           </pre>  
         </div>
