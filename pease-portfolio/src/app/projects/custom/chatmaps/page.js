@@ -247,11 +247,88 @@ export default function Home() {
             <section className="text-center w-[80%] left-[10%] relative">
                 ChatMaps is a web-based social networking service that allows users to connect to others in their local geographic area. It implements an interactable mapping utility to show general user locations relative to others, as well as a chat room feature that allows users to start public conversations based on any given topic. ChatMaps is primarily intended for use in densely populated areas, such as college campuses or metropolitan areas, so people of similar interests can start new conversations. The goal of this project is to create a web app that plots locations, gives a radius of the local area, and connects users into different topic-based chat rooms. 
                 <br/><br/>This service implements user login and profiles, allowing users to add each other as friends and start private conversations. There are several default chat rooms of varying topics, but users also have the ability to create their own rooms that will be visible to other users. For example, a user at the University of Maine could create a joinable chat room titled “COS420”, which would be joinable by others near this campus.
-                <br/><br/>This app shares some similarities to other social networks that implement location-based content. ChatMaps’ novel approach is to utilize user location to facilitate real-time communication with others within a given radius.
+                <br/><br/>This app shares some similarities to other social networks that implement location-based content. ChatMaps’ novel approach is to utilize user location to facilitate real-time communication with others within a given radius.<br/>
+                <br/> <span className='font-bold'>Live Demo: <a href="https://chatma.ps" className='underline' target="_blank">chatma.ps</a></span><br/>
+                Login: demo@chatma.ps<br/>
+                Password: demoapp
             </section>
             <section className="grid max-md:grid-cols-1 grid-cols-2">
                 <FileList/>
                 <ImageCarousel/>
+            </section>
+            <section className='mt-5'>
+               <span className='font-bold text-[24px]'>Contributors / Commit History</span>
+               <div className='grid grid-cols-3 m-5 gap-x-5'>
+                    <img src="/project_files/chatmaps/contribution_ss/lax18.png" className="w-[100%]"/>
+                    <img src="/project_files/chatmaps/contribution_ss/clarklach.png" className="w-[100%]"/>
+                    <img src="/project_files/chatmaps/contribution_ss/sgoodridge.png" className="w-[100%]"/>
+               </div>
+               <div className='grid grid-cols-3 mt-5 gap-x-5 mr-5 ml-5'>
+                <div className='col-span-1'>
+                    <span className='font-bold text-[24px]'>Weekly Code Frequency Graph</span>
+                    <img src="/project_files/chatmaps/contribution_ss/codefreq.png" className="w-[100%]"/>
+                </div>
+                <div className='col-span-2 p-2'>
+                    <span className='font-bold text-[24px]'>Contributions by Author</span>
+                    <table className='w-[100%] text-center'>
+                        <thead>
+                            <tr className='italic'>
+                                <th>Author Name</th>
+                                <th>Insertions</th>
+                                <th>Deletions</th>
+                                <th>Files</th>
+                                <th>Commits</th>
+                                <th>Lines Changed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nicholas Pease (LAX18)</td>
+                                <td>+30,719 (78%)</td>
+                                <td>-14,937 (83%)</td>
+                                <td>574 (81%)</td>
+                                <td>186 (76%)</td>
+                                <td>45656 (80%)</td>
+                            </tr>
+                            <tr>
+                                <td>Clark LaChance (ClarkLach)</td>
+                                <td>+2562   (7%)</td>
+                                <td>-2802   (16%)</td>
+                                <td>106    (15%)</td>
+                                <td>48     (20%)</td>
+                                <td>5364   (9%)</td>
+                            </tr>
+                            <tr>
+                                <td>Stephen Goodridge (Sgoodridge96)</td>
+                                <td>+769    (2%)</td>
+                                <td>-243    (1%)</td>
+                                <td>16     (2%)</td>
+                                <td>7      (3%)</td>
+                                <td>1012   (2%)</td>
+                            </tr>
+                            <tr>
+                                <td>Joseph Gallant (JGCS22)</td>
+                                <td>+5062   (13%)</td>
+                                <td>-3      (0%)</td>
+                                <td>14     (2%)</td>
+                                <td>2      (1%)</td>
+                                <td>5065   (9%)</td>
+                            </tr>
+                            <tr>
+                                <td>Totals</td>
+                                <td>39112</td>
+                                <td>17985</td>
+                                <td>710  </td>
+                                <td>243  </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td className='pt-5 text-[12px]' colSpan="6">* totals include all lines in repository including (but not limited to), comments, dependencies (when not ommited) and configuration files.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+               </div>
             </section>
         </div>
     </div>)
