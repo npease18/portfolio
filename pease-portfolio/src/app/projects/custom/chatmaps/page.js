@@ -258,19 +258,19 @@ export default function Home() {
             </section>
             <section className='mt-5'>
                <span className='font-bold text-[24px]'>Contributors / Commit History</span>
-               <div className='grid grid-cols-3 m-5 gap-x-5'>
+               <div className='grid md:grid-cols-3 m-5 gap-x-5 gap-y-5'>
                     <img src="/project_files/chatmaps/contribution_ss/lax18.png" className="w-[100%]"/>
                     <img src="/project_files/chatmaps/contribution_ss/clarklach.png" className="w-[100%]"/>
                     <img src="/project_files/chatmaps/contribution_ss/sgoodridge.png" className="w-[100%]"/>
                </div>
-               <div className='grid grid-cols-3 mt-5 gap-x-5 mr-5 ml-5'>
+               <div className='grid max-md:grid-cols-1 md:grid-cols-3 mt-5 gap-x-5 mr-5 ml-5'>
                 <div className='col-span-1'>
                     <span className='font-bold text-[24px]'>Weekly Code Frequency Graph</span>
                     <img src="/project_files/chatmaps/contribution_ss/codefreq.png" className="w-[100%]"/>
                 </div>
                 <div className='col-span-2 p-2'>
                     <span className='font-bold text-[24px]'>Contributions by Author</span>
-                    <table className='w-[100%] text-center'>
+                    <table className='w-[100%] text-center max-md:text-[10px]'>
                         <thead>
                             <tr className='italic'>
                                 <th>Author Name</th>
@@ -288,15 +288,15 @@ export default function Home() {
                                 <td>-14,937 (83%)</td>
                                 <td>574 (81%)</td>
                                 <td>186 (76%)</td>
-                                <td>45656 (80%)</td>
+                                <td>45,656 (80%)</td>
                             </tr>
                             <tr>
                                 <td>Clark LaChance (ClarkLach)</td>
-                                <td>+2562   (7%)</td>
-                                <td>-2802   (16%)</td>
+                                <td>+2,562   (7%)</td>
+                                <td>-2,802   (16%)</td>
                                 <td>106    (15%)</td>
                                 <td>48     (20%)</td>
-                                <td>5364   (9%)</td>
+                                <td>5,364   (9%)</td>
                             </tr>
                             <tr>
                                 <td>Stephen Goodridge (Sgoodridge96)</td>
@@ -304,20 +304,20 @@ export default function Home() {
                                 <td>-243    (1%)</td>
                                 <td>16     (2%)</td>
                                 <td>7      (3%)</td>
-                                <td>1012   (2%)</td>
+                                <td>1,012   (2%)</td>
                             </tr>
                             <tr>
                                 <td>Joseph Gallant (JGCS22)</td>
-                                <td>+5062   (13%)</td>
+                                <td>+5,062   (13%)</td>
                                 <td>-3      (0%)</td>
                                 <td>14     (2%)</td>
                                 <td>2      (1%)</td>
-                                <td>5065   (9%)</td>
+                                <td>5,065   (9%)</td>
                             </tr>
                             <tr>
                                 <td>Totals</td>
-                                <td>39112</td>
-                                <td>17985</td>
+                                <td>39,112</td>
+                                <td>17,985</td>
                                 <td>710  </td>
                                 <td>243  </td>
                                 <td></td>

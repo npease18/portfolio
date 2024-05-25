@@ -17,7 +17,7 @@
         "isPublic": true,
         "hasGitea": true,
         "hasGithub": false,
-        "hasCustomPage": false
+        "hasCustomPage": "aa1"
     },
     "Aviation Assistant V2": {
         "description": "The Aviation Assistant V2 is a revamped version of the Aviation Assistant sporting a larger battery/runtime in addition to a more portable footprint for use in the field.",
