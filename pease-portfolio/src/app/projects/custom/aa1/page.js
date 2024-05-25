@@ -15,7 +15,7 @@ export default function Home() {
                 <section className="text-center pt-3 relative max-md:w-[80%] max-md:left-[10%] md:left-[20%] md:w-[60%]">
                     The Aviation Assistant is a combination hardware / software solution to allow the user to track aircraft using the Automated Dependent Surveillance - Broadcast (ADS-B) system.
                     The device is a Raspberry Pi, coupled with a battery control board, speakers, and a USB SDR interface device. The software is a combination of a modified <Link href="https://github.com/mutability/dump1090" target="_blank" className="underline italic">dump1090</Link>
-                    software, extended with additional features, in addition to a series of device based API's to facilite control and information from the physical hardware to the software interface. The interface is presented to the user via the 7" touchscreen display in the form of 
+                    software, extended with additional features, in addition to a series of device based APIs to facilite control and information from the physical hardware to the software interface. The interface is presented to the user via the 7 inch touchscreen display in the form of 
                     website. 
                 </section>
             </div>
