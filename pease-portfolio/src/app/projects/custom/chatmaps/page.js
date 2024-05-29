@@ -9,108 +9,120 @@ import {useEffect, useState} from 'react'
 
 import { FileList } from "../../../../components/filelist"
 
+import YouTube from "react-youtube"
+
 var chatmapsFileList = [
-    {
-        "name": "Chatmaps Final Presentation Video",
-        "type": "MP4 Video",
-        "filename": "Chatmaps Final Presentation (Video).mp4",
-        "filetype": "MP4"
-    },
     {
         "name": "Chatmaps Final Presentation Slides",
         "type": "PDF",
         "filename": "ChatMaps Final Presentation.pdf",
-        "filetype": "PDF"
+        "filetype": "PDF",
+        "path": "/project_files/chatmaps"
     },
     {
         "name": "Chatmaps Proposal Presentation",
         "type": "PDF",
         "filename": "ChatMaps Proposal Presentation.pdf",
-        "filetype": "PDF"
+        "filetype": "PDF",
+        "path": "/project_files/chatmaps"
     },
     {
         "name": "Configuration Management Document",
         "type": "PDF",
         "filename": "Config Management.pdf",
-        "filetype": "PDF"
+        "filetype": "PDF",
+        "path": "/project_files/chatmaps"
     },
     {
         "name": "Design Pattern Document",
         "type": "PDF",
         "filename": "Design Pattern.pdf",
-        "filetype": "PDF"
+        "filetype": "PDF",
+        "path": "/project_files/chatmaps"
     },
     {
         "name": "Domain Model Document",
         "type": "PDF",
         "filename": "Domain Model.pdf",
-        "filetype": "PDF"
+        "filetype": "PDF",
+        "path": "/project_files/chatmaps"
     },
     {
         "name": "Future Plan Document",
         "type": "PDF",
         "filename": "Future Plan.pdf",
-        "filetype": "PDF"
+        "filetype": "PDF",
+        "path": "/project_files/chatmaps"
     },
     {
         "name": "Sequence Diagram Document",
         "type": "PDF",
         "filename": "Sequence Diagram.pdf",
-        "filetype": "PDF"
+        "filetype": "PDF",
+        "path": "/project_files/chatmaps"
     },
     {
         "name": "Software Architecture Document",
         "type": "PDF",
         "filename": "Software Architecture.pdf",
-        "filetype": "PDF"
+        "filetype": "PDF",
+        "path": "/project_files/chatmaps"
     },
     {
         "name": "Sprint Backlog Document",
         "type": "PDF",
         "filename": "Sprint Backlog.pdf",
-        "filetype": "PDF"
+        "filetype": "PDF",
+        "path": "/project_files/chatmaps"
     },
     {
         "name": "Sprint Review 2 Document",
         "type": "PDF",
         "filename": "Sprint Review 2.pdf",
-        "filetype": "PDF"
+        "filetype": "PDF",
+        "path": "/project_files/chatmaps"
     },
     {
         "name": "Sprint Review 3 Document",
         "type": "PDF",
         "filename": "Sprint Review 3.pdf",
-        "filetype": "PDF"
+        "filetype": "PDF",
+        "path": "/project_files/chatmaps"
     },
     {
         "name": "Sprint Review 4 Document",
         "type": "PDF",
         "filename": "Sprint Review 4.pdf",
-        "filetype": "PDF"
+        "filetype": "PDF",
+        "path": "/project_files/chatmaps"
     },
     {
         "name": "Sprint Review 5 Document",
         "type": "PDF",
         "filename": "Sprint Review 5.pdf",
-        "filetype": "PDF"
+        "filetype": "PDF",
+        "path": "/project_files/chatmaps"
     },
     {
         "name": "Software Requirements Specification Document",
         "type": "PDF",
         "filename": "SRS.pdf",
-        "filetype": "PDF"
+        "filetype": "PDF",
+        "path": "/project_files/chatmaps"
     },
     {
         "name": "Test Plan",
         "type": "PDF",
         "filename": "Test Plan.pdf",
-        "filetype": "PDF"
+        "filetype": "PDF",
+        "path": "/project_files/chatmaps"
     },
     {
         "name": "Use Case Models Document",
         "type": "PDF",
         "filename": "Use Case Models.pdf",
-        "filetype": "PDF"
+        "filetype": "PDF",
+        "path": "/project_files/chatmaps"
     }
 ]
 
@@ -298,6 +310,17 @@ export default function Home() {
                     </table>
                 </div>
                </div>
+            </section>
+            <section className='mt-5 ml-5 mr-5'>
+                <span className='text-[24px] font-bold'>Project Videos</span>
+                <div className='grid grid-cols-2'>
+                    <div>
+                        <YouTube videoId="CHxvlg3fvrI" opts={{width: "100%",height: "300px"}}/>
+                    </div>
+                    <div>
+                        <YouTube videoId="L5VpyMdkYfU" opts={{width: "100%",height: "300px"}}/>
+                    </div>
+                </div>
             </section>
         </div>
     </div>)
