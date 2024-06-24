@@ -23,7 +23,7 @@ export default function Page() {
             <img src="https://img.shields.io/badge/Powered%20By%20NextJS-grey?style=for-the-badge&logo=nextdotjs"/>
         </section>
         <section className="flex justify-center items-center mt-5 w-[70%] relative left-[15%]">
-        The register tools are a suite of software developed for the Aubuchon Hardware company to aid in the updating of manual UPC lookup books as well as interfacing with the backend's pricing API to provide real time inventory, pricing, and product information. Due to the nature of this software, it is closed sourced.
+        The register tools are a suite of software developed for the Aubuchon Hardware company to aid in the updating of manual UPC lookup books as well as interfacing with the backends pricing API to provide real time inventory, pricing, and product information. Due to the nature of this software, it is closed sourced.
         </section>
         <section className="flex justify-left mt-10 w-[70%] text-[32px] relative left-[15%] font-bold mb-5">
             The Suite of Tools Includes:
