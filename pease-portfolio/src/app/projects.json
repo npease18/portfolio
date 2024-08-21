@@ -28,9 +28,8 @@
         "hasGitea": true,
         "hasGithub": false,
         "hasCustomPage": false
-
     },
-    "Aubuchon Register Tool": {
+    "Aubuchon Additional Register Tools": {
         "description": "The register tools are a suite of software developed for the Aubuchon Hardware company to aid in the updating of manual UPC lookup books as well as interfacing with the backend's pricing API to provide real time inventory, pricing, and product information. Due to the nature of this software, it is closed sourced.",
         "img": "aublogo.svg",
         "gitea_user": "npease",
@@ -48,5 +47,14 @@
         "hasGitea": true,
         "hasGithub": false,
         "hasCustomPage": false
+    },
+    "Weather Satellite Imagery": {
+        "description": "The Weather Satellite Imagery project is a project where I constructed and tested various antennas and software to receive and decode weather satellite imagery from NOAA and Meteor satellites. Various results from these transmissions are availiable online at this website!",
+        "isPublic": true,
+        "hasGitea": false,
+        "hasGithub": true,
+        "hasCustomPage": false,
+        "github_user": "LAX18",
+        "github_repo": "Satellite-Imagery-Uploads"
     }
 }

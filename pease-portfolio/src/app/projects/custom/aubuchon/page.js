@@ -5,6 +5,7 @@ import ViewListIcon from '@mui/icons-material/ViewList';
 import SearchIcon from '@mui/icons-material/Search';
 import SignpostIcon from '@mui/icons-material/Signpost';
 import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
+import FormatColorFillIcon from '@mui/icons-material/FormatColorFill';
 
 import { useState } from 'react';
 
@@ -15,7 +16,7 @@ export default function Page() {
             <img src="/images/aublogo_color.svg" className="w-[40%]"/>
         </section>
         <section className="flex justify-center items-center mt-5 font-bold text-[32px]">
-            Aubuchon Hardware Register Tool
+            Aubuchon Hardware Additional Register Tools
         </section>
         <section className="flex justify-center items-center mt-5">
             <img src="https://img.shields.io/badge/VERSION-2.1.0-GREEN?style=for-the-badge"/>
@@ -34,10 +35,10 @@ export default function Page() {
 }
 
 function ToolExpander() {
-    const [tool, setTool] = useState(null)
+    const [tool, setTool] = useState("register")
     return (
         <main>
-            <section className='grid grid-cols-6 gap-x-5 justify-items-center text-center w-[80%] relative left-[10%]'>
+            <section className='grid grid-cols-7 gap-x-5 justify-items-center text-center w-[80%] relative left-[10%]'>
                 <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("register")}>
                     <MenuBookIcon className="text-[90px]" fontSize="220px"/><br/>
                     Generate Register Book
@@ -61,6 +62,10 @@ function ToolExpander() {
                 <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("investigation")}>
                     <SearchIcon className="text-[90px]" fontSize="220px"/><br/>
                     SKU Investigation
+                </div>
+                <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("colorx")}>
+                    <FormatColorFillIcon className="text-[90px]" fontSize="220px"/><br/>
+                    ColorX Calculator
                 </div>
             </section>
             {tool && <div className='mt-5 bg-slate-900 rounded-lg p-5 w-[80%] relative left-[10%] min-h-[140px]'>
@@ -96,5 +101,9 @@ var tools = {
     investigation: {
         title: "SKU Investigation",
         description: "This tool investigates potentially mistyped SKUs for user errors on the POS systems. It then sorts those similar SKUs according to their 'suspiciousness' and allows the user to investigate the potential errors. This tool is best used for negatives and other issue SKUs",
+    },
+    colorx: {
+        title: "ColorX Calculator",
+        description: "This tool is used to calculate the paint differential between two given Benjamin Moore ColorX paint color formulas. It works by converting both formulas into common units, and outputting a simple to dispense formula to turn the old color, into the desired color.",
     }
 }

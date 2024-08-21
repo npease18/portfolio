@@ -1,3 +1,6 @@
+import moment from 'moment';
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+
 export function Header() {
         return (
           <header className="pt-5 w-1/1 flex justify-center">
@@ -15,7 +18,7 @@ export function Footer() {
     return (
       <div className="flex justify-center w-full mb-5">
         <div className="mt-5 bg-slate-900 rounded-lg w-full h-[85px] self-center text-center p-5 ml-5 mr-5">
-          &copy; 2024 Nicholas Pease. <br/>Last Updated on 10 May 2024.
+          &copy; 2024 Nicholas Pease. <br/>Last Updated on {moment().format("DD MMM YYYY")}.
         </div>
       </div>
     );
@@ -23,13 +26,49 @@ export function Footer() {
 
 export function Navigation() {
   return (
-    <div className="flex justify-center w-full mb-5">
-        <div className="mt-5 bg-slate-900 rounded-lg w-full self-center p-1 ml-5 mr-5">
-          <a href="/" className="ml-5 hover:font-bold break-inside-avoid">Home</a>
-          <a href="/projects" className="ml-5 hover:font-bold break-inside-avoid">Projects</a>
-          <a href="/previous_versions" className="ml-5 hover:font-bold break-inside-avoid">Previous Editions</a>
-          <a href="/server" className="ml-5 hover:font-bold break-inside-avoid">Server Administration</a>
+    <div className="flex justify-center w-full mb-5 leading-10">
+        <div className="mt-5 bg-slate-900 rounded-lg w-full self-center ml-5 mr-5">
+          <a href="/" className="pl-5 hover:bg-slate-600 p-2 break-inside-avoid hover:rounded-l-lg">Home</a>
+          <a href="/projects" className="hover:bg-slate-600 p-2 break-inside-avoid">Projects</a>
+          <CareerNav/>
         </div>
       </div>
   );
+}
+
+function CareerNav() {
+  return (
+    <span>
+      <Menu>
+        <MenuButton className="pl-2 pr-2 hover:bg-slate-600">Career</MenuButton>
+        <MenuItems anchor="bottom start" className="bg-slate-900 text-center mt-3 rounded-lg">
+          <MenuItem className="p-2">
+            <a className="block data-[focus]:bg-slate-600 hover:rounded-t-lg" href="/settings">
+              Resume
+            </a>
+          </MenuItem>
+          <MenuItem className="p-2">
+            <a className="block data-[focus]:bg-slate-600" href="/career/work">
+              Work Experience
+            </a>
+          </MenuItem>
+          <MenuItem className="p-2">
+            <a className="block data-[focus]:bg-slate-600" href="/career/skills">
+              Skills
+            </a>
+          </MenuItem>
+          <MenuItem className="p-2">
+            <a className="block data-[focus]:bg-slate-600" href="/previous_versions">
+              Previous Portfolio Versions
+            </a>
+          </MenuItem>
+          <MenuItem className="p-2">
+            <a className="block data-[focus]:bg-slate-600 hover:rounded-b-lg" href="/career/license">
+              Licenses & Certifications
+            </a>
+          </MenuItem>
+        </MenuItems>
+      </Menu>
+    </span>
+  )
 }

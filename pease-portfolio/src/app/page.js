@@ -1,4 +1,7 @@
 import Projects from "./projects.json"
+import moment from "moment"
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Link from "next/link"
 
 function AboutMe() {
   return (
@@ -8,6 +11,9 @@ function AboutMe() {
           <div className="self-center">
             <img className="w-56 h-56  rounded-full" src="/images/me.jpg"></img>
             <div className="pt-5 text-[45px]">About Me</div>
+            <div className="w-[100%] flex justify-center">
+              <Link href="https://www.linkedin.com/in/nicholaspease207/" target="_blank"><LinkedInIcon fontSize="large" sx={{cursor: "pointer"}}/></Link>
+            </div>
           </div>
         </div>
         <div className="mt-5 col-span-2 max-lg:ml-5 max-lg:mr-5">
@@ -21,7 +27,7 @@ function AboutMe() {
             to date to the best of my ability. <br/>
             </div>
             <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ timedatectl --lastupdated<br/>
-            This website was last updated on Friday, May 10th 2024.<br/>
+            This website was last updated on {moment().format("dddd, MMM Do YYYY")}.<br/>
             <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ <span className="animate-blink"> </span>
           </pre>  
         </div>
@@ -56,7 +62,7 @@ function ProjectsHome() {
       <div className="md:grid md:grid-cols-3 auto-cols-auto gap-x-5 gap-y-5 ml-5 mr-5">
         <NotableProject name="ChatMaps"/>
         <NotableProject name="Aviation Assistant V1"/>
-        <NotableProject name="Aubuchon Register Tool"/>
+        <NotableProject name="Aubuchon Additional Register Tools"/>
       </div>
       <div className="flex justify-center mt-5">
         <div className="bg-slate-900 p-5 rounded-lg text-[20px]">
