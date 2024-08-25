@@ -168,8 +168,8 @@ export default function Home() {
                     <img src="/project_files/aa2/photos/aa2_software_icon.png" className=""/>
                     <span className="text-[30px] font-bold pl-10">Aviation Assistant V2 Software</span>
                 </div>
-                <div className="grid grid-cols-2 gap-x-10">
-                    <YouTube videoId="3qVFOusYwo4"/>
+                <div className="grid md:grid-cols-2 gap-x-10 gap-y-10 w-[100%]">
+                    <YouTube videoId="3qVFOusYwo4" opts={{"width": '100%', height: "100%"}}/>
                     <div className="bg-slate-900 p-5 rounded-xl">
                         The Aviation Assistant software (version 2) is more geared toward a simpler, plane spotting experience. Users have the ability to track aircraft on a live map,
                         view aircraft details including any available pictures of the aircraft, in addition to modifying the background and features of the map. 
