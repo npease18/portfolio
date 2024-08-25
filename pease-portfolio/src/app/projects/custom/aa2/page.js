@@ -6,8 +6,12 @@ import { useState } from "react"
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { grey } from '@mui/material/colors';
-import { Chrono } from "react-chrono";
 import YouTube from 'react-youtube';
+import dynamic from 'next/dynamic'
+
+export const Chrono = dynamic(() => import('react-chrono').then(lib => lib.Chrono), {
+  ssr: false,
+})
 
 import { FileList } from "@/components/filelist"
 
