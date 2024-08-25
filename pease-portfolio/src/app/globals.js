@@ -18,7 +18,7 @@ export function Footer() {
     return (
       <div className="flex justify-center w-full mb-5">
         <div className="mt-5 bg-slate-900 rounded-lg w-full h-[85px] self-center text-center p-5 ml-5 mr-5">
-          &copy; 2024 Nicholas Pease. <br/>Last Updated on {moment().format("DD MMM YYYY")}.
+          &copy; {moment().format("YYYY")} Nicholas Pease. <br/>Last Updated on {moment().format("DD MMM YYYY")}.
         </div>
       </div>
     );
@@ -30,7 +30,7 @@ export function Navigation() {
         <div className="mt-5 bg-slate-900 rounded-lg w-full self-center ml-5 mr-5">
           <a href="/" className="pl-5 hover:bg-slate-600 p-2 break-inside-avoid hover:rounded-l-lg">Home</a>
           <a href="/projects" className="hover:bg-slate-600 p-2 break-inside-avoid">Projects</a>
-          <CareerNav/>
+          {/*<CareerNav/>*/}
         </div>
       </div>
   );

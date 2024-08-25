@@ -27,7 +27,7 @@
         "isPublic": true,
         "hasGitea": true,
         "hasGithub": false,
-        "hasCustomPage": false
+        "hasCustomPage": "aa2"
     },
     "Aubuchon Additional Register Tools": {
         "description": "The register tools are a suite of software developed for the Aubuchon Hardware company to aid in the updating of manual UPC lookup books as well as interfacing with the backend's pricing API to provide real time inventory, pricing, and product information. Due to the nature of this software, it is closed sourced.",
