@@ -1,6 +1,7 @@
 import Projects from "./projects.json"
 import moment from "moment"
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import Link from "next/link"
 
 function AboutMe() {
@@ -11,8 +12,9 @@ function AboutMe() {
           <div className="self-center">
             <img className="w-56 h-56  rounded-full" src="/images/me.jpg"></img>
             <div className="pt-5 text-[45px]">About Me</div>
-            <div className="w-[100%] flex justify-center">
+            <div className="w-[100%] flex justify-center gap-x-2">
               <Link href="https://www.linkedin.com/in/nicholaspease207/" target="_blank"><LinkedInIcon fontSize="large" sx={{cursor: "pointer"}}/></Link>
+              <Link href="https://github.com/LAX18" target="_blank"><GitHubIcon fontSize="large" sx={{cursor: "pointer"}}/></Link>
             </div>
           </div>
         </div>
@@ -27,7 +29,7 @@ function AboutMe() {
             to date to the best of my ability. <br/>
             </div>
             <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ timedatectl --lastupdated<br/>
-            This website was last updated on {moment().format("dddd, MMM Do YYYY")}.<br/>
+            This website was last updated on {moment().format("dddd, MMMM Do YYYY")}.<br/>
             <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ <span className="animate-blink"> </span>
           </pre>  
         </div>

@@ -30,7 +30,7 @@ export function Navigation() {
         <div className="mt-5 bg-slate-900 rounded-lg w-full self-center ml-5 mr-5">
           <a href="/" className="pl-5 hover:bg-slate-600 p-2 break-inside-avoid hover:rounded-l-lg">Home</a>
           <a href="/projects" className="hover:bg-slate-600 p-2 break-inside-avoid">Projects</a>
-          {/*<CareerNav/>*/}
+          <CareerNav/>
         </div>
       </div>
   );
@@ -43,15 +43,15 @@ function CareerNav() {
         <MenuButton className="pl-2 pr-2 hover:bg-slate-600">Career</MenuButton>
         <MenuItems anchor="bottom start" className="bg-slate-900 text-center mt-3 rounded-lg">
           <MenuItem className="p-2">
-            <a className="block data-[focus]:bg-slate-600 hover:rounded-t-lg" href="/settings">
+            <a className="block data-[focus]:bg-slate-600 hover:rounded-t-lg" href="/career/resume">
               Resume
             </a>
           </MenuItem>
-          <MenuItem className="p-2">
+          {/*<MenuItem className="p-2">
             <a className="block data-[focus]:bg-slate-600" href="/career/work">
               Work Experience
             </a>
-          </MenuItem>
+          </MenuItem>*/}
           <MenuItem className="p-2">
             <a className="block data-[focus]:bg-slate-600" href="/career/skills">
               Skills
