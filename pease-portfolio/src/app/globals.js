@@ -62,11 +62,13 @@ function CareerNav() {
               Previous Portfolio Versions
             </a>
           </MenuItem>
-          <MenuItem className="p-2">
-            <a className="block data-[focus]:bg-slate-600 hover:rounded-b-lg" href="/career/license">
-              Licenses & Certifications
-            </a>
-          </MenuItem>
+         {/* 
+           <MenuItem className="p-2">
+           <a className="block data-[focus]:bg-slate-600 hover:rounded-b-lg" href="/career/license">
+             Licenses & Certifications
+           </a>
+         </MenuItem>
+         */}
         </MenuItems>
       </Menu>
     </span>
