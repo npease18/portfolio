@@ -23,7 +23,8 @@
     "react-dom": "^18",
     "react-file-viewer": "^1.2.1",
     "react-iframe": "^1.8.5",
-    "react-youtube": "^10.1.0"
+    "react-youtube": "^10.1.0",
+    "vercel": "^37.6.1"
   },
   "homepage": "https://nicholaspease.com",
   "devDependencies": {
