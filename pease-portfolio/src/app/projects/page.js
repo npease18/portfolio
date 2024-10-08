@@ -1,6 +1,7 @@
 import Image from "next/image"
 import ProjectsListJSON from "../projects.json"
 
+
 function ProjectHeader() {
   return (
     <div className="mt-5 ml-5">
@@ -39,7 +40,7 @@ function Project({name, description, imgURL}) {
     );
   } else {
     return (
-      <div className="w-[100%] mt-5">
+      <div className="inline-block w-[33%] mt-5 text-center">
         <div className="w-[100%] flex justify-center">
           <div className="w-[100%] self-center ml-5 mr-5">
             <div className="bg-slate-900 w-[100%] rounded-lg p-5">

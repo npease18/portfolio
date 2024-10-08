@@ -22,7 +22,9 @@
     "react-chrono": "^2.6.1",
     "react-dom": "^18",
     "react-file-viewer": "^1.2.1",
+    "react-grid-gallery": "^1.0.1",
     "react-iframe": "^1.8.5",
+    "react-image-lightbox": "^5.1.4",
     "react-youtube": "^10.1.0",
     "vercel": "^37.6.1"
   },

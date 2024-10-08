@@ -48,12 +48,21 @@
         "hasGithub": false,
         "hasCustomPage": false
     },
+    "Calculator Programming": {
+        "description": "My first introduction to programming was by way of the Texas Instruments series of calculators. These taught me fundamentals in programming with languages such as TI-BASIC, ICE, and Assembly.",
+        "gitea_user": "npease",
+        "gitea_repo": "ti",
+        "isPublic": false,
+        "hasGitea": false,
+        "hasGithub": "Satellite-Imagery-Uploads",
+        "hasCustomPage": false
+    },
     "Weather Satellite Imagery": {
         "description": "The Weather Satellite Imagery project is a project where I constructed and tested various antennas and software to receive and decode weather satellite imagery from NOAA and Meteor satellites. Various results from these transmissions are availiable online at this website!",
         "isPublic": true,
         "hasGitea": false,
         "hasGithub": true,
-        "hasCustomPage": false,
+        "hasCustomPage": "weatherimg",
         "github_user": "LAX18",
         "github_repo": "Satellite-Imagery-Uploads"
     }
