@@ -23,6 +23,7 @@
     "react-dom": "^18",
     "react-file-viewer": "^1.2.1",
     "react-iframe": "^1.8.5",
+    "react-photoswipe-gallery": "^3.0.2",
     "react-youtube": "^10.1.0",
     "vercel": "^37.6.1"
   },

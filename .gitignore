@@ -133,3 +133,4 @@ dist
 # Configuration Files
 pease-portfolio/src/app/projects.json
 /pease-portfolio/.vercel
+.vercel
