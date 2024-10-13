@@ -12,6 +12,7 @@ import { useState } from 'react';
 export default function Page() {
   return (
     <div className="grid grid-cols-1">
+        <title>Aubuchon Register Tools | nicholaspease.com</title>
         <section className="flex justify-center items-center">
             <img src="/images/aublogo_color.svg" className="w-[40%]"/>
         </section>

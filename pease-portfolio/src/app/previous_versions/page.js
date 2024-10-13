@@ -1,6 +1,13 @@
 import PriorVersions from "./versions.json"
 import moment from 'moment';
 
+export async function generateMetadata() {
+    return {
+        title: 'Previous Versions | nicholaspease.com'
+    }
+  }
+  
+
 function PriorWebsiteVersion({version}) {
     var version = PriorVersions[version]
     var start = moment(version.start)

@@ -2,6 +2,12 @@ import Image from "next/image"
 import ProjectsListJSON from "../projects.json"
 
 
+export async function generateMetadata() {
+  return {
+      title: 'Projects | nicholaspease.com'
+  }
+}
+
 function ProjectHeader() {
   return (
     <div className="mt-5 ml-5">

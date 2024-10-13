@@ -65,6 +65,6 @@
         "isPublic": false,
         "hasGitea": false,
         "hasGithub": false,
-        "hasCustomPage": false
+        "hasCustomPage": "calc"
     }
 }

@@ -1,6 +1,19 @@
 import Projects from "../../projects.json"
 import { redirect } from "next/navigation";
 
+export async function generateMetadata({params}) {
+    var name = params.slug.replaceAll("%20", " ")
+    if (name in Projects) {
+        return {
+            title: `${name} | nicholaspease.com`
+        }
+    } else {
+        return {
+            title: "Project Does Not Exist | nicholaspease.com"
+        }
+    }
+}
+
 function Page({params}) {
     var name = params.slug.replaceAll("%20", " ")
     if (name in Projects) {
