@@ -1,3 +1,6 @@
+"use client"
+import { SourceCodeExplorer } from '../../../../components/sourcecodeviewer.js';
+
 const PROGRAMS = {
     'asteroids': {
         title: 'Asteroids CE',
@@ -41,6 +44,17 @@ const PROGRAMS = {
     }
 }
 
+const calcFiles = {
+    "Asteroids CE": {
+        title: 'Asteroids CE',
+        files: ['ASTROID3','ASHINST']
+    },
+    "Asteroids ICE": {
+        title: 'Asteroids ICE',
+        files: ['ASTEROID','ASTINST']
+    },
+}
+
 const NOS = {
         title: 'NOS (Nick Operating System)',
         description: "NOS (or Nick's Operational Shell) will be a simple shell with a GUI similar to the Kindle Fire Home Screen. To scroll through the programs, you use the left and right keys. Possible features would be pinning programs to the beginning of the carousel and using the A-Z keys to navigate similarly to Cesium.",
@@ -50,16 +64,11 @@ const NOS = {
         publishDate: "Unpublished"
 }
 
-export async function generateMetadata() {
-    return {
-        title: 'Calculator Programming | nicholaspease.com'
-    }
-}
 
 function Program({program}) {
     return (
         <div className='bg-slate-900 rounded-xl p-5 text-center'>
-            <div class="flex justify-center items-center">
+            <div className="flex justify-center items-center">
                 <img className="w-[320px] h-[240px]" src={program.image}/>
             </div><br/>
             <a href={program.link} target="_blank" className='font-bold text-center text-[26px]'>{program.title}</a>
@@ -82,9 +91,12 @@ function Programs() {
     return arr
 }
 
+
+
 export default function Home() {
     return (
     <div className="pl-6 pr-6">
+        <title>Calculator Programming | nicholaspease.com</title>
         <div className="grid grid-cols-1">
             <section>
                 <div>
@@ -92,15 +104,20 @@ export default function Home() {
                     Calculator programming is where I got my initial start in software development and taught me the fundamentals of programming. I started with a TI-83+ calculator that I purchased from a thrift store. Below you can find many of the software programs I have written for the TI series of calculators. While I was developing programs for the TI series of calculators starting around 2014, I did not publish them online until around 2018, where I found the online community Cemetech. Below are some of the published products I produced.
                 </div>
             </section>
-           <section className='grid mt-5 gap-x-5 gap-y-5 lg:grid-flow-col grid-flow-row'>
+           <section className='grid mt-5 gap-x-5 gap-y-5 lg:grid-cols-3 grid-flow-row'>
                 <Programs/>
            </section>
            <section className="mt-5">
            Below are some unfinished projects that I have worked on. These were never published but may have had some beta programs released.
-           <div className="grid mt-5 lg:w-[50%]">
+           <div className="grid mt-5 lg:grid-cols-3">
                <Program program={NOS}/>
            </div>
            </section>
+           {/*<section className='pl-5 pr-5 mt-5'>
+               <span className='text-[36px] font-bold'>Source Code</span><br/>
+               Please use the below source code viewer to examine the source code of the programs above. The source code is written in raw file formats for transfer to the calculators, and requires a premade viewer here.
+               <SourceCodeExplorer data={calcFiles}/>
+           </section>*/}
         </div>
     </div>)
 }
