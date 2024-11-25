@@ -22,7 +22,7 @@ function AboutMe() {
             <div className="pt-5 text-[45px]">About Me</div>
             <div className="w-[100%] flex justify-center gap-x-2">
               <Link href="https://www.linkedin.com/in/nicholaspease207/" target="_blank"><LinkedInIcon fontSize="large" sx={{cursor: "pointer"}}/></Link>
-              <Link href="https://github.com/LAX18" target="_blank"><GitHubIcon fontSize="large" sx={{cursor: "pointer"}}/></Link>
+              <Link href="https://github.com/npease18" target="_blank"><GitHubIcon fontSize="large" sx={{cursor: "pointer"}}/></Link>
               <Link href="mailto:web-contact@nicholaspease.com" target="_blank"><EmailIcon fontSize="large" sx={{cursor: "pointer"}}/></Link>
             </div>
           </div>

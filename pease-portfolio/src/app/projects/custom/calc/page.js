@@ -45,7 +45,7 @@ const NOS = {
         title: 'NOS (Nick Operating System)',
         description: "NOS (or Nick's Operational Shell) will be a simple shell with a GUI similar to the Kindle Fire Home Screen. To scroll through the programs, you use the left and right keys. Possible features would be pinning programs to the beginning of the carousel and using the A-Z keys to navigate similarly to Cesium.",
         image: '/images/NOS.png',
-        link: 'https://github.com/LAX18/NOS',
+        link: 'https://github.com/npease18/NOS',
         language: 'TI 84 ICE',
         publishDate: "Unpublished"
 }
