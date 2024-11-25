@@ -216,6 +216,7 @@ function ImageCarousel() {
 export default function Home() {
     return (
     <div className="pl-6">
+        <title>ChatMaps | nicholaspease.com</title>
         <div className="grid grid-cols-1">
             <section className="flex justify-center items-center">
                 <img src="/images/chatmaps.png" className=""/>

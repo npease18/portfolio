@@ -13,6 +13,8 @@ export const Chrono = dynamic(() => import('react-chrono').then(lib => lib.Chron
   ssr: false,
 })
 
+
+
 import { FileList } from "@/components/filelist"
 
 var fileList = [
@@ -65,6 +67,7 @@ function ImageCarousel() {
       )
     return (
         <div className='ml-2 mr-5 mt-5 p-3'>
+            <title>Avaition Assistant V2 | nicholaspease.com</title>
             <div ref={sliderRef} className="keen-slider">
                 <div className={`keen-slider__slide ${loaded ? 'block' : 'hidden'}`}>
                     <p className="flex justify-center">

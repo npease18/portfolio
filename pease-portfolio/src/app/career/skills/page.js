@@ -1,3 +1,10 @@
+export async function generateMetadata() {
+    return {
+        title: 'Skills | nicholaspease.com'
+    }
+  }
+  
+
 export default async function Page() {
     var languagesData = await fetch("https://wakatime.com/share/@LAX18/1d8ca4cf-2eec-49dc-b5a3-98900456e06e.json")
     var languages = await languagesData.json()
@@ -9,7 +16,7 @@ export default async function Page() {
                 <h2 className="font-bold text-[26px]">Programming Languages</h2>
                 <subsection>
                     My top languages are <span className="font-bold">{languages[0].name} ({languages[0].percent}%)</span>, <span className="font-bold">{languages[1].name} ({languages[1].percent}%)</span>, and <span className="font-bold">{languages[2].name} ({languages[2].percent}%)</span>. For a more comprehensive list of all programming languages I have experience with, please see below.
-                    <figure className="md:w-[45vw]"><embed src="https://wakatime.com/share/@LAX18/171a76f8-babe-4433-ac6f-1fe5438a50bb.svg"></embed></figure><br/>
+                    <figure className="md:w-[45vw]"><embed src="https://wakatime.com/share/@LAX18/2ea5a9d3-283b-4fe5-bf7b-8b4169566738.svg"></embed></figure><br/>
                     This is a somewhat incomplete number as this particular tracker <a className="underline" href="https://wakatime.com/@LAX18">WakaTime</a> has only been active and tracking my coding activity since February 16th, 2024. Some previous languages I have more experience with include <a href="https://tutorials.eeems.ca/ASMin28Days/lesson/toc.html" className="underline" target="_blank">z80 Assembly for TI calculators</a> and <a href="/career/tibasic.pdf" className="underline" target="_blank">TI-BASIC</a>.
                 </subsection>
                 <h2 className="font-bold text-[26px] mt-5">Frameworks</h2>

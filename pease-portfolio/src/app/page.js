@@ -2,7 +2,15 @@ import Projects from "./projects.json"
 import moment from "moment"
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailIcon from '@mui/icons-material/Email';
 import Link from "next/link"
+
+export async function generateMetadata() {
+  return {
+      title: 'Home | nicholaspease.com'
+  }
+}
+
 
 function AboutMe() {
   return (
@@ -14,7 +22,8 @@ function AboutMe() {
             <div className="pt-5 text-[45px]">About Me</div>
             <div className="w-[100%] flex justify-center gap-x-2">
               <Link href="https://www.linkedin.com/in/nicholaspease207/" target="_blank"><LinkedInIcon fontSize="large" sx={{cursor: "pointer"}}/></Link>
-              <Link href="https://github.com/LAX18" target="_blank"><GitHubIcon fontSize="large" sx={{cursor: "pointer"}}/></Link>
+              <Link href="https://github.com/npease18" target="_blank"><GitHubIcon fontSize="large" sx={{cursor: "pointer"}}/></Link>
+              <Link href="mailto:web-contact@nicholaspease.com" target="_blank"><EmailIcon fontSize="large" sx={{cursor: "pointer"}}/></Link>
             </div>
           </div>
         </div>

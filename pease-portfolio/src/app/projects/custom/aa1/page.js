@@ -176,6 +176,7 @@ function ImageCarousel() {
 export default function Home() {
     return (
         <div>
+            <title>Avaition Assistant V1 | nicholaspease.com</title>
             <main className="grid max-md:grid-cols-1 md:grid-cols-3">
                 <div className="">
                     <img src="/project_files/aa/photos/aa_side.png" className="md:relative md:left-[20%] md:w-[80%]"/>

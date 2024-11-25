@@ -2,7 +2,6 @@
 import { Gallery, Item } from 'react-photoswipe-gallery'
 import 'photoswipe/dist/photoswipe.css'
 
-
 export default function Page() {
     var NOAAComposite = [
         {
@@ -177,6 +176,7 @@ export default function Page() {
    
     return (
         <div className="pl-[2%] pr-[2%]">
+            <title>Weather Satellite Imagery | nicholaspease.com</title>
             <div>
                 <span className='text-[36px] font-bold'>Weather Satellite Imagery Capture and Processing</span><br/>
                 During March to May of 2020, I spent extensive time learning to receive and process various types of VHF satellite imagery provided by a handful of government satellites. Primarily, imagery can be download via two series of satellites, NOAA and Roscosmos &quot;Meteor&quot; satellites. Both transmit in the VHF frequency band, with NOAA transmitting via automated picture transmission (APT) format, and Meteor transmitting via low-resolution picture transmission (LRPT) format. The images are received via a VHF antenna, and decoded using a software-defined radio (SDR) and a decoding software. The images are then processed using a variety of software tools to enhance the image quality and remove noise. The images are then composited together to create a full image of the Earth. The images are then used to monitor weather patterns and storm systems.

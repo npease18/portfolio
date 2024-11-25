@@ -6,16 +6,20 @@ import SearchIcon from '@mui/icons-material/Search';
 import SignpostIcon from '@mui/icons-material/Signpost';
 import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
 import FormatColorFillIcon from '@mui/icons-material/FormatColorFill';
+import { CodeBlock, irBlack } from 'react-code-blocks';
+
+import sheetsTool from './source.js';
 
 import { useState } from 'react';
 
 export default function Page() {
   return (
     <div className="grid grid-cols-1">
+        <title>Aubuchon Register Tools | nicholaspease.com</title>
         <section className="flex justify-center items-center">
             <img src="/images/aublogo_color.svg" className="w-[40%]"/>
         </section>
-        <section className="flex justify-center items-center mt-5 font-bold text-[32px]">
+        <section className="flex justify-center items-center mt-5 font-bold max-md:text-[24px] md:text-[32px]">
             Aubuchon Hardware Additional Register Tools
         </section>
         <section className="flex justify-center items-center mt-5">
@@ -30,48 +34,78 @@ export default function Page() {
             The Suite of Tools Includes:
         </section>
         <ToolExpander/>
+        <section className='grid grid-cols-1 text-center justify-center items-center mt-10 w-[70%] relative left-[15%]'>
+            <span className='font-bold max-md:text-[24px] md:text-[32px]'>Google Sheets Tool</span>
+           <span> As an additional tool, I have developed a Google Sheets Add-On that allows the user to interface with the Aubuchon Inventory API to query information regarding inventory, product pricing and other information. It can be used to automate a wide variety of spreadsheets including inventory pick lists and many more. A redacted version of this tool is below</span>
+           <div className='text-left mt-5 bg-slate-900 rounded-lg p-5'>
+              <CodeBlock text={sheetsTool} language={"js"} showLineNumbers={true} theme={irBlack} customStyle={{backgroundColor: '#0f172a'}}/>
+           </div>
+        </section>
     </div>
   );
 }
 
 function ToolExpander() {
     const [tool, setTool] = useState("register")
+    var toolsMobile = []
+    for(var tool1 in tools) {
+        toolsMobile.push(
+            <div className='mb-5'>
+                <div className='grid place-items-center text-center'>
+                    <div className="button-expand w-[150px]">
+                        {tools[tool1].icon}<br/>
+                        {tools[tool1].title}
+                    </div>
+                </div>
+                
+                <div className='mt-5 bg-slate-900 rounded-lg p-5 w-[80%] relative left-[10%] min-h-[140px]'>
+                    <div className='font-bold'>{tools[tool1].title}</div>
+                    {tools[tool1].description}
+                </div>
+            </div>
+        )
+    }
     return (
         <main>
-            <section className='grid grid-cols-7 gap-x-5 justify-items-center text-center w-[80%] relative left-[10%]'>
-                <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("register")}>
-                    <MenuBookIcon className="text-[90px]" fontSize="220px"/><br/>
-                    Generate Register Book
-                </div>
-                <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("pallet")}>
-                    <CallToActionIcon className="text-[90px]" fontSize="220px"/><br/>
-                    Generate Pallet Signs
-                </div>
-                <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("list")}>
-                    <ViewListIcon className="text-[90px]" fontSize="220px"/><br/>
-                    Generate List from SKU/UPC
-                </div>
-                <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("counter")}>
-                    <FormatListNumberedIcon className="text-[90px]" fontSize="220px"/><br/>
-                    SKU Counter
-                </div>
-                <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("sign")}>
-                    <SignpostIcon className="text-[90px]" fontSize="220px"/><br/>
-                    Create-A-Sign 2
-                </div>
-                <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("investigation")}>
-                    <SearchIcon className="text-[90px]" fontSize="220px"/><br/>
-                    SKU Investigation
-                </div>
-                <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("colorx")}>
-                    <FormatColorFillIcon className="text-[90px]" fontSize="220px"/><br/>
-                    ColorX Calculator
-                </div>
-            </section>
-            {tool && <div className='mt-5 bg-slate-900 rounded-lg p-5 w-[80%] relative left-[10%] min-h-[140px]'>
-                <div className='font-bold'>{tools[tool].title}</div>
-                {tools[tool].description}
-            </div>}
+            <subsection className="max-lg:hidden">
+                <section className='grid grid-cols-7 gap-x-5 justify-items-center text-center w-[80%] relative left-[10%]'>
+                    <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("register")}>
+                        <MenuBookIcon className="text-[90px]" fontSize="220px"/><br/>
+                        Generate Register Book
+                    </div>
+                    <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("pallet")}>
+                        <CallToActionIcon className="text-[90px]" fontSize="220px"/><br/>
+                        Generate Pallet Signs
+                    </div>
+                    <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("list")}>
+                        <ViewListIcon className="text-[90px]" fontSize="220px"/><br/>
+                        Generate List from SKU/UPC
+                    </div>
+                    <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("counter")}>
+                        <FormatListNumberedIcon className="text-[90px]" fontSize="220px"/><br/>
+                        SKU Counter
+                    </div>
+                    <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("sign")}>
+                        <SignpostIcon className="text-[90px]" fontSize="220px"/><br/>
+                        Create-A-Sign 2
+                    </div>
+                    <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("investigation")}>
+                        <SearchIcon className="text-[90px]" fontSize="220px"/><br/>
+                        SKU Investigation
+                    </div>
+                    <div className="button-expand w-[150px]" onMouseOverCapture={() => setTool("colorx")}>
+                        <FormatColorFillIcon className="text-[90px]" fontSize="220px"/><br/>
+                        ColorX Calculator
+                    </div>
+                </section>
+                {tool && <div className='mt-5 bg-slate-900 rounded-lg p-5 w-[80%] relative left-[10%] min-h-[140px]'>
+                    <div className='font-bold'>{tools[tool].title}</div>
+                    {tools[tool].description}
+                </div>}
+            </subsection>
+            <subsection className="lg:hidden">
+                {toolsMobile}
+            </subsection>
         </main>
         
     )
@@ -79,30 +113,37 @@ function ToolExpander() {
 
 var tools = {
     register: {
+        icon: (<MenuBookIcon className="text-[90px]" fontSize="220px"/>),
         title: "Generate Register Book",
         description: "This tool takes a Microsoft Excel workbook and formats the data in a manner consistent among uses. This allows the store to generate identical books, with minimal duplication of efforts and materials, while optimizing for time. This tools also allows the store to utilize barcode's in the book, without relying on cashiers to type all of the codes by hand.",
     },
     pallet: {
+        icon: <CallToActionIcon className="text-[90px]" fontSize="220px"/>,
         title: "Generate Pallet Signs",
         description: "This tool takes a Microsoft Excel workbook and reads through all the user selected categories. It then queries the central Aubuchon Inventory API to assemble individualized pallet signs with most up to date pricing and additional data.",
     },
     list: {
+        icon: <ViewListIcon className="text-[90px]" fontSize="220px"/>,
         title: "Generate List from SKU/UPC",
         description: "This tool takes a bulk list of UPC's / SKUs and queries the Aubuchon Inventory API to assemble a list of items with the most up to date pricing and additional data. This tool is used to generate lists for the store to use in their daily operations. Potential applications involve inventorying, general list-making, and other correspondences.",
     },
     counter: {
+        icon: <FormatListNumberedIcon className="text-[90px]" fontSize="220px"/>,
         title: "SKU Counter",
         description: "This tool takes a bulk list of UPC's / SKUs and queries the Aubuchon Inventory API to count the number of items in the list. This tool is used to generate counts for the store to use in their daily operations. Potential applications involve inventorying, cycle counting, box inventorying, and other applications where counting a large number of scannable items is not practical.",
     },
     sign: {
+        icon: <SignpostIcon className="text-[90px]" fontSize="220px"/>,
         title: "Create-A-Sign 2",
         description: "This is a better version of the Aubuchon Hardware 'Create-A-Sign' program. This tool includes options to bulk generate signs, modify the pricing data should it be inaccurate, among other additions.",
     },
     investigation: {
+        icon: <SearchIcon className="text-[90px]" fontSize="220px"/>,
         title: "SKU Investigation",
         description: "This tool investigates potentially mistyped SKUs for user errors on the POS systems. It then sorts those similar SKUs according to their 'suspiciousness' and allows the user to investigate the potential errors. This tool is best used for negatives and other issue SKUs",
     },
     colorx: {
+        icon: <FormatColorFillIcon className="text-[90px]" fontSize="220px"/>,
         title: "ColorX Calculator",
         description: "This tool is used to calculate the paint differential between two given Benjamin Moore ColorX paint color formulas. It works by converting both formulas into common units, and outputting a simple to dispense formula to turn the old color, into the desired color.",
     }
