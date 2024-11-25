@@ -9,13 +9,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react";
 
 function AboutMe() {
-  var [typed, setTyped] = useState("")
-  useEffect(() => {
-    var onType = (e) => {
-      setTyped(typed => typed + e.key)
-    }
-    document.addEventListener("keyup", onType)
-  }, [])
+
   return (
     <div className="pl-[1%] w-[98%]">
       <div className="sm:flex sm:justify-center md:grid md:grid-cols-3 pt-5 auto-cols-max">
@@ -42,7 +36,7 @@ function AboutMe() {
             </div>
             <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ timedatectl --lastupdated<br/>
             This website was last updated on {moment().format("dddd, MMMM Do YYYY")}.<br/>
-            <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ {typed}<span className="animate-blink"> </span>
+            <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ <input className="bg-black border-0 text-white"/><span className="animate-blink"> </span>
           </pre>  
         </div>
       </div>
