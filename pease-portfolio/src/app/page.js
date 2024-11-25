@@ -1,18 +1,21 @@
+"use client"
+
 import Projects from "./projects.json"
 import moment from "moment"
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 import Link from "next/link"
-
-export async function generateMetadata() {
-  return {
-      title: 'Home | nicholaspease.com'
-  }
-}
-
+import { useEffect, useState } from "react";
 
 function AboutMe() {
+  var [typed, setTyped] = useState("")
+  useEffect(() => {
+    var onType = (e) => {
+      setTyped(typed => typed + e.key)
+    }
+    document.addEventListener("keyup", onType)
+  }, [])
   return (
     <div className="pl-[1%] w-[98%]">
       <div className="sm:flex sm:justify-center md:grid md:grid-cols-3 pt-5 auto-cols-max">
@@ -39,7 +42,7 @@ function AboutMe() {
             </div>
             <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ timedatectl --lastupdated<br/>
             This website was last updated on {moment().format("dddd, MMMM Do YYYY")}.<br/>
-            <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ <span className="animate-blink"> </span>
+            <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ {typed}<span className="animate-blink"> </span>
           </pre>  
         </div>
       </div>
@@ -69,6 +72,7 @@ function NotableProject({name}) {
 function ProjectsHome() {
   return (
     <div className="mb-10">
+      <title>Home | nicholaspease.com</title>
       <div className="pt-5 flex justify-center text-[45px]">Notable Projects</div>
       <div className="md:grid md:grid-cols-3 auto-cols-auto gap-x-5 gap-y-5 ml-5 mr-5">
         <NotableProject name="ChatMaps"/>
