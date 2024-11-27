@@ -19,7 +19,7 @@ function Command({command, result}) {
 
 export function Terminal() {
     const [text, setText] = useState("")
-    const [history, setHistory] = useState([<Command command="uname -a"/>,<Command command="timedatectl"/>])
+    const [history, setHistory] = useState([<Command command="uname -a" key={"0"}/>,<Command command="timedatectl"  key={"1"}/>])
     const handleKeyDown = event => {
         event.preventDefault()
         if (event.code == "Backspace") {setText(text.slice(0, -1))}
@@ -27,7 +27,7 @@ export function Terminal() {
             if (text == "clear") {
                 setHistory([])
             } else {
-                commands[text] != null? setHistory([...history, <Command command={text}/>]): `Command '${text.split(" ")[0]}' not found.`
+                commands[text] != null? setHistory([...history, <Command command={text} key={history[history.length-1].props.key+1}/>]): `Command '${text.split(" ")[0]}' not found.`
             }
             setText("")
         }
