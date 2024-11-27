@@ -1,15 +1,15 @@
 "use client"
 
 import Projects from "./projects.json"
-import moment from "moment"
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 import Link from "next/link"
-import { useEffect, useState } from "react";
+
+import { Terminal } from "../components/terminal.js"
+
 
 function AboutMe() {
-
   return (
     <div className="pl-[1%] w-[98%]">
       <div className="sm:flex sm:justify-center md:grid md:grid-cols-3 pt-5 auto-cols-max">
@@ -24,20 +24,8 @@ function AboutMe() {
             </div>
           </div>
         </div>
-        <div className="mt-5 col-span-2 max-lg:ml-5 max-lg:mr-5">
-          <pre className="bash text-wrap">
-            MOTD: This website is still under construction<br/>
-            <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ uname -a<br/>
-            <div>
-            Hello! My name is Nicholas Pease and I am currently a junior at the University of Maine pursuing a bachelors degree in 
-            Computer Science with a minor in Military Science. This website is a collection of both project / homework completed as 
-            required by my studies and as a showcase of some of the personal projects I have worked on. I will work to keep this up 
-            to date to the best of my ability. <br/>
-            </div>
-            <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ timedatectl --lastupdated<br/>
-            This website was last updated on {moment().format("dddd, MMMM Do YYYY")}.<br/>
-            <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ <input className="bg-black border-0 text-white"/><span className="animate-blink"> </span>
-          </pre>  
+        <div className="col-span-2">
+          <Terminal/>
         </div>
       </div>
     </div>
