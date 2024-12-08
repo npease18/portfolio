@@ -6,8 +6,6 @@ export function TelnetDisplay() {
     var film = film1.split('\n');
     var LINES_PER_FRAME = 14;
     var DELAY_NORMAL = 67;
-    var DELAY_FAST = 17;
-    var DELAY_VERYFAST = 1;
 
     var g_currentFrame = 0;
     var g_updateDelay = DELAY_NORMAL;

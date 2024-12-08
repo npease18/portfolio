@@ -4,7 +4,6 @@ import { TelnetDisplay } from "./telnet";
 
 const commands = {
     "uname -a": "Hello! My name is Nicholas Pease and I am currently a junior at the University of Maine pursuing a bachelors degree in Computer Science with a minor in Military Science. This website is a collection of both project / homework completed as required by my studies and as a showcase of some of the personal projects I have worked on. I will work to keep this up to date to the best of my ability. ",
-    "timedatectl": `This website was last updated on ${moment().format("dddd, MMMM Do YYYY")}.`,
     "poweroff": "Nice try...",
     "shutdown": "Nice try...",
     "sudo poweroff": "Nice try...",
@@ -52,6 +51,8 @@ export function Terminal() {
         else if (event.code == "Enter") {
             if (text == "clear") {
                 setHistory([])
+            } else if (text == "timedatectl") {
+                setHistory([...history, <Command command={text} result={`This website was last updated on ${moment(document.lastModified).format("dddd, MMMM Do YYYY")}.`} key={history.length? history[history.length-1].props.key+1: 0}/>])
             } else if (commands[text] != undefined) {
                 setHistory([...history, <Command command={text} key={history.length? history[history.length-1].props.key+1: 0}/>])
             } else {
