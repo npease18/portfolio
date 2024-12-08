@@ -30,10 +30,33 @@ export function Navigation() {
         <div className="mt-5 bg-slate-900 rounded-lg w-full self-center ml-5 mr-5">
           <a href="/" className="pl-5 hover:bg-slate-600 p-2 break-inside-avoid hover:rounded-l-lg">Home</a>
           <a href="/projects" className="hover:bg-slate-600 p-2 break-inside-avoid">Projects</a>
+          <PersonalNav/>
           <CareerNav/>
         </div>
       </div>
   );
+}
+
+function PersonalNav() {
+  return (
+    <span>
+      <Menu>
+        <MenuButton className="pl-2 pr-2 hover:bg-slate-600">Personal</MenuButton>
+        <MenuItems anchor="bottom start" className="bg-slate-900 text-center mt-3 rounded-lg"> 
+          <MenuItem className="p-2">
+            <a className="block data-[focus]:bg-slate-600" href="/personal/about-me">
+              About Me
+            </a>
+          </MenuItem>
+          <MenuItem className="p-2">
+            <a className="block data-[focus]:bg-slate-600" href="/personal/plane-spotting">
+              Plane Spotting
+            </a>
+          </MenuItem>
+        </MenuItems>
+      </Menu>
+    </span>
+  )
 }
 
 function CareerNav() {

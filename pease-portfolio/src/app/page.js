@@ -16,7 +16,7 @@ function AboutMe() {
         <div className="md:mr-10 bg-slate-900 rounded-lg h-[420px] col-span-1 flex justify-center max-lg:ml-5 max-lg:mr-5">
           <div className="self-center">
             <img className="w-56 h-56  rounded-full" src="/images/me.jpg"></img>
-            <div className="pt-5 text-[45px]">About Me</div>
+            <div className="pt-5 text-[45px]"><Link href="/personal/about-me">About Me</Link></div>
             <div className="w-[100%] flex justify-center gap-x-2">
               <Link href="https://www.linkedin.com/in/nicholaspease207/" target="_blank"><LinkedInIcon fontSize="large" sx={{cursor: "pointer"}}/></Link>
               <Link href="https://github.com/npease18" target="_blank"><GitHubIcon fontSize="large" sx={{cursor: "pointer"}}/></Link>
