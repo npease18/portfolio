@@ -1,17 +1,19 @@
 import moment from 'moment';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 
+var headers = ['header','header1']
+
 export function Header() {
-        return (
-          <header className="pt-5 w-1/1 flex justify-center">
-            <div className="shadow-lg w-[98%] bg-slate-900 flex rounded-lg h-64 max-lg:ml-5 max-lg:mr-5">
-              <div className="self-end pb-5">
-                <div className="pl-5 self-end text-[50px]">Nicholas Pease</div>
-                <div className="pl-5 self-end text-[15px]">My portfolio and project place.</div>
-              </div>
-            </div>
-          </header>
-        );
+  return (
+    <header className="pt-5 w-1/1 flex justify-center">
+      <div className={"shadow-lg w-[98%] bg-cover bg-no-repeat bg-center bg-[url('/images/headers/"+headers[Math.floor(Math.random() * (headers.length))]+".jpg')] flex rounded-lg h-[400px] max-lg:ml-5 max-lg:mr-5"}>
+        <div className="self-end pb-5">
+          <div className="pl-5 self-end text-[50px]">Nicholas Pease</div>
+          <div className="pl-5 self-end text-[15px]">My portfolio and project place.</div>
+        </div>
+      </div>
+    </header>
+  );
 }
 
 export function Footer() {
