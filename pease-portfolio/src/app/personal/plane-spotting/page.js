@@ -53,6 +53,36 @@ const PLANES = [{
     reg: "UR-82072"
 },
 {
+    src: "/images/planes/20230920_181428.jpg",
+    width: 4000,
+    height: 1868,
+    model: "AN124",
+    manufacturer: "Antonov",
+    date: "09/20/2023",
+    location: "KBGR",
+    reg: "UR-82072"
+},
+{
+    src: "/images/planes/20230920_181432.jpg",
+    width: 4000,
+    height: 1868,
+    model: "AN124",
+    manufacturer: "Antonov",
+    date: "09/20/2023",
+    location: "KBGR",
+    reg: "UR-82072"
+},
+{
+    src: "/images/planes/20230926_144016.jpg",
+    width: 4000,
+    height: 1868,
+    model: "206",
+    manufacturer: "Cessna",
+    date: "09/26/2023",
+    location: "KBGR",
+    reg: "01970"
+},
+{
     src: "/images/planes/20231014_151149.jpg",
     width: 4000,
     height: 1868,
@@ -66,6 +96,76 @@ const PLANES = [{
     date: "12/01/2024",
     location: "KBGR",
     reg: "F-GSTC"
+},
+{
+    src: "/images/planes/20241207_151807.jpg",
+    width: 4000,
+    height: 1419,
+    model: "A300-600ST",
+    manufacturer: "Airbus",
+    date: "12/07/2024",
+    location: "KBGR",
+    reg: "F-GSTC"
+},
+{
+    src: "/images/planes/20230625_175812.jpg",
+    width: 1868,
+    height: 1051,
+    model: "A10 / F35",
+    manufacturer: "Various",
+    date: "06/25/2023",
+    location: "KBGR",
+    reg: "Various"
+},
+{
+    src: "/images/planes/20230603_120656.jpg",
+    width: 4000,
+    height: 1868,
+    model: "E145",
+    manufacturer: "Embraer",
+    date: "06/03/2023",
+    location: "KBGR",
+    reg: "SE-DZA"
+},
+{
+    src: "/images/planes/20230926_135151.jpg",
+    width: 4000,
+    height: 1868,
+    model: "UH-60",
+    manufacturer: "Sikorsky",
+    date: "09/26/2023",
+    location: "KBGR",
+    reg: "6039"
+},
+{
+    src: "/images/planes/20230728_161709.jpg",
+    width: 4000,
+    height: 1514,
+    model: "MV-22",
+    manufacturer: "Boeing",
+    date: "07/28/2023",
+    location: "KBXM",
+    reg: "N/A"
+},
+{
+    src: "/images/planes/20230728_160853.jpg",
+    width: 4000,
+    height: 1868,
+    model: "VC-25",
+    manufacturer: "Boeing",
+    date: "07/28/2023",
+    location: "KBXM",
+    reg: "29000"
+},
+{
+    src: "/images/planes/20230625_180016.jpg",
+    width: 4000,
+    height: 1868,
+    model: "C-130",
+    manufacturer: "Lockheed",
+    date: "06/25/2023",
+    location: "KBGR",
+    reg: "65849"
 }]
 
 
