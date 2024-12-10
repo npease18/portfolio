@@ -45,6 +45,7 @@ function isValidKey(event) {
 export function Terminal() {
     const [text, setText] = useState("")
     const [history, setHistory] = useState([<Command command="uname -a" key={0}/>,<Command command="timedatectl"  key={1}/>,<Command command="compgen -c" key={2}/>])
+
     const handleKeyDown = event => {
         event.preventDefault()
         if (event.code == "Backspace") {setText(text.slice(0, -1))}
@@ -65,14 +66,25 @@ export function Terminal() {
         else if (event.code == "Minus") {setText(text + "-")}
         else if (isValidKey(event)) {setText(text + event.key)}
     };
+
+    const mouseEnter = event => {
+        document.getElementById("terminal-focus").focus()
+    }
+
+    const mouseLeave = event => {
+        window.focus()
+    }
     return (
-        <div className="cursor-pointer outline-0 max-h-[420px] w-[100%] overflow-hidden max-lg:ml-5 max-lg:mr-5  flex flex-col-reverse p-1" onKeyDown={handleKeyDown} tabIndex={0}>
-            <pre className="bash text-wrap">
-                {history}
-                <div>
-                    <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ {text}<span className="animate-blink"> </span>
-                </div>
-            </pre>
+        <div className="h-[420px] cursor-pointer outline-0" id="terminal-focus" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} tabIndex={0} onKeyDown={handleKeyDown}>
+            <div className="max-h-[420px] w-[100%] overflow-hidden max-lg:ml-5 max-lg:mr-5 flex flex-col-reverse p-1">
+                <pre className="bash text-wrap">
+                    {history}
+                    <div>
+                        <span className="text-[green]">about@npease</span>:<span className="text-[blue]">~</span>$ {text}<span className="animate-blink"> </span>
+                    </div>
+                </pre>
+            </div>
         </div>
+        
     )
 }
