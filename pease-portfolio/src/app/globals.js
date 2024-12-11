@@ -72,3 +72,14 @@ function CareerNav() {
     </span>
   )
 }
+
+export function FallbackHeader() {
+  return (
+          <div className="bg-slate-900 w-[98%] h-[400px] ml-[1%] mr-[1%] mb-5 pt-5 w-1/1 flex">
+              <div className="self-end pb-5 w-full">
+              <div className="pl-5 self-end text-[50px]">Nicholas Pease</div>
+              <div className="pl-5 self-end text-[15px]">My portfolio and project place.</div>
+              </div>
+          </div>
+  );
+}
