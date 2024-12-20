@@ -167,6 +167,26 @@ const PLANES = [
         date: "06/25/2023",
         location: "KBGR",
         reg: "65849"
+    },
+    {
+        src: "/images/planes/20241219_202354.jpg",
+        width: 4000,
+        height: 2252,
+        model: "B-52H",
+        manufacturer: "Boeing",
+        date: "12/19/2024",
+        location: "KBGR",
+        reg: "60-0056 / 60-0029"
+    },
+    {
+        src: "/images/planes/20241219_202355.jpg",
+        width: 3015,
+        height: 1696,
+        model: "B-52H",
+        manufacturer: "Boeing",
+        date: "12/19/2024",
+        location: "KBGR",
+        reg: "60-0056"
     }
 ]
 
