@@ -169,16 +169,6 @@ const PLANES = [
         reg: "65849"
     },
     {
-        src: "/images/planes/20241219_202354.jpg",
-        width: 4000,
-        height: 2252,
-        model: "B-52H",
-        manufacturer: "Boeing",
-        date: "12/19/2024",
-        location: "KBGR",
-        reg: "60-0056 / 60-0029"
-    },
-    {
         src: "/images/planes/20241219_202355.jpg",
         width: 3015,
         height: 1696,
@@ -187,17 +177,41 @@ const PLANES = [
         date: "12/19/2024",
         location: "KBGR",
         reg: "60-0056"
+    },
+    {
+        src: "/images/planes/b52_edit1.jpg",
+        width: 4000,
+        height: 2252,
+        model: "B-52H",
+        manufacturer: "Boeing",
+        date: "12/19/2024",
+        location: "KBGR",
+        reg: "60-0056"
+    },
+    {
+        src: "/images/planes/b52_edit2.jpg",
+        width: 3015,
+        height: 1696,
+        model: "B-52H",
+        manufacturer: "Boeing",
+        date: "12/19/2024",
+        location: "KBGR",
+        reg: "60-0029"
     }
 ]
 
 export default function Page() {
     var images = PLANES.map((plane) => {
+        var subcaption = <span>{plane.manufacturer} {plane.model} [{plane.reg}] <br/> {plane.location} ({plane.date})</span>
         var caption = plane.date != undefined? `<span class="text-[20px] relative bottom-[30px] bg-slate-900 rounded-xl p-5">${plane.manufacturer} ${plane.model} (<a href="https://www.flightaware.com/live/flight/${plane.reg}" target="_blank">${plane.reg}</a>) - ${plane.location} (${plane.date})</span>`: '<span class="text-[20px] relative bottom-[30px] bg-slate-900 rounded-xl p-5">No Data Found</span>'
         return <Item key={plane.src} original={plane.src} width={plane.width} height={plane.height} caption={caption}>
-            {({ ref, open }) => (
-                <img ref={ref} onClick={open} src={plane.src} className='inline-block m-5 w-[22%] cursor-pointer'/>
-            )}
-        </Item>
+                    {({ ref, open }) => (
+                        <div className='w-[22%] inline-block m-5 text-center'>
+                            <img ref={ref} onClick={open} src={plane.src} className='inline-block m-5 cursor-pointer'/>
+                            <span>{plane.date != undefined? subcaption: `No Data Found`}</span>
+                        </div>
+                    )}
+                </Item>
     })
     return (
         <div className="p-5 h-[100%]">
