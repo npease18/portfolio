@@ -14,9 +14,11 @@
         "img": "aa1.png",
         "gitea_user": "npease",
         "gitea_repo": "AviationAssistant",
+        "github_user": "npease18",
+        "github_repo": "AviationAssistant",
         "isPublic": true,
         "hasGitea": true,
-        "hasGithub": false,
+        "hasGithub": true,
         "hasCustomPage": "aa1"
     },
     "Aviation Assistant V2": {
@@ -24,9 +26,11 @@
         "img": "aa2.png",
         "gitea_user": "npease",
         "gitea_repo": "AviationAssistantV2",
+        "github_user": "npease18",
+        "github_repo": "AviationAssistantV2",
         "isPublic": true,
         "hasGitea": true,
-        "hasGithub": false,
+        "hasGithub": true,
         "hasCustomPage": "aa2"
     },
     "Aubuchon Additional Register Tools": {

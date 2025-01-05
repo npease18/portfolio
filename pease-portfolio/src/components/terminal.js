@@ -75,8 +75,8 @@ export function Terminal() {
         window.focus()
     }
     return (
-        <div className="h-[420px] cursor-pointer outline-0" id="terminal-focus" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} tabIndex={0} onKeyDown={handleKeyDown}>
-            <div className="max-h-[420px] w-[100%] overflow-hidden max-lg:ml-5 max-lg:mr-5 flex flex-col-reverse p-1">
+        <div className="max-md:h-fit max-md:pl-5 max-md:pr-5 w-[100%] h-[420px] cursor-pointer outline-0" id="terminal-focus" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} tabIndex={0} onKeyDown={handleKeyDown}>
+            <div className="max-md:max-h-fit max-h-[420px] w-[100%] overflow-hidden max-lg:ml-5 max-lg:mr-5 flex flex-col-reverse p-1">
                 <pre className="bash text-wrap">
                     {history}
                     <div>

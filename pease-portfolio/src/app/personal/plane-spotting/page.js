@@ -2,7 +2,7 @@
 import { Gallery, Item } from 'react-photoswipe-gallery'
 import 'photoswipe/dist/photoswipe.css'
 
-const PLANES = [
+export const Planes = [
     {
         src: "/images/planes/20230402_093722.jpg",
         width: 4000,
@@ -11,7 +11,8 @@ const PLANES = [
         model: "747-412",
         manufacturer: "Boeing",
         location: "KBGR",
-        reg: "N756CA"
+        reg: "N756CA",
+        headerReady: true
     },
     {
         src: "/images/planes/20230402_115859.jpg",
@@ -21,7 +22,8 @@ const PLANES = [
         model: "767-300",
         manufacturer: "Boeing",
         location: "KBGR",
-        reg: "N706KW"
+        reg: "N706KW",
+        headerReady: false
     },
     {
         src: "/images/planes/20230708_134556.jpg",
@@ -31,7 +33,8 @@ const PLANES = [
         manufacturer: "Boeing",
         date: "07/08/2023",
         location: "KBGR",
-        reg: "N915NN"
+        reg: "N915NN",
+        headerReady: false
     },
     {
         src: "/images/planes/20230701_153414.jpg",
@@ -41,7 +44,8 @@ const PLANES = [
         manufacturer: "Antonov",
         date: "06/25/2023",
         location: "KBGR",
-        reg: "UR-82008"
+        reg: "UR-82008",
+        headerReady: false
     },
     {
         src: "/images/planes/20230920_181416.jpg",
@@ -51,7 +55,8 @@ const PLANES = [
         manufacturer: "Antonov",
         date: "09/20/2023",
         location: "KBGR",
-        reg: "UR-82072"
+        reg: "UR-82072",
+        headerReady: true
     },
     {
         src: "/images/planes/20230920_181428.jpg",
@@ -61,7 +66,8 @@ const PLANES = [
         manufacturer: "Antonov",
         date: "09/20/2023",
         location: "KBGR",
-        reg: "UR-82072"
+        reg: "UR-82072",
+        headerReady: false
     },
     {
         src: "/images/planes/20230920_181432.jpg",
@@ -71,7 +77,8 @@ const PLANES = [
         manufacturer: "Antonov",
         date: "09/20/2023",
         location: "KBGR",
-        reg: "UR-82072"
+        reg: "UR-82072",
+        headerReady: false
     },
     {
         src: "/images/planes/20230926_144016.jpg",
@@ -81,12 +88,14 @@ const PLANES = [
         manufacturer: "Cessna",
         date: "09/26/2023",
         location: "KBGR",
-        reg: "01970"
+        reg: "01970",
+        headerReady: true
     },
     {
         src: "/images/planes/20231014_151149.jpg",
         width: 4000,
         height: 1868,
+        headerReady: false
     },
     {
         src: "/images/planes/20241201_165213.jpg",
@@ -96,7 +105,8 @@ const PLANES = [
         manufacturer: "Airbus",
         date: "12/01/2024",
         location: "KBGR",
-        reg: "F-GSTC"
+        reg: "F-GSTC",
+        headerReady: true
     },
     {
         src: "/images/planes/20241207_151807.jpg",
@@ -106,7 +116,8 @@ const PLANES = [
         manufacturer: "Airbus",
         date: "12/07/2024",
         location: "KBGR",
-        reg: "F-GSTC"
+        reg: "F-GSTC",
+        headerReady: true
     },
     {
         src: "/images/planes/20230625_175812.jpg",
@@ -116,7 +127,8 @@ const PLANES = [
         manufacturer: "Various",
         date: "06/25/2023",
         location: "KBGR",
-        reg: "Various"
+        reg: "Various",
+        headerReady: true
     },
     {
         src: "/images/planes/20230603_120656.jpg",
@@ -126,7 +138,8 @@ const PLANES = [
         manufacturer: "Embraer",
         date: "06/03/2023",
         location: "KBGR",
-        reg: "SE-DZA"
+        reg: "SE-DZA",
+        headerReady: false
     },
     {
         src: "/images/planes/20230926_135151.jpg",
@@ -136,7 +149,8 @@ const PLANES = [
         manufacturer: "Sikorsky",
         date: "09/26/2023",
         location: "KBGR",
-        reg: "6039"
+        reg: "6039",
+        headerReady: true
     },
     {
         src: "/images/planes/20230728_161709.jpg",
@@ -146,7 +160,8 @@ const PLANES = [
         manufacturer: "Boeing",
         date: "07/28/2023",
         location: "KBXM",
-        reg: "N/A"
+        reg: "N/A",
+        headerReady: true
     },
     {
         src: "/images/planes/20230728_160853.jpg",
@@ -156,7 +171,8 @@ const PLANES = [
         manufacturer: "Boeing",
         date: "07/28/2023",
         location: "KBXM",
-        reg: "29000"
+        reg: "29000",
+        headerReady: true
     },
     {
         src: "/images/planes/20230625_180016.jpg",
@@ -166,7 +182,8 @@ const PLANES = [
         manufacturer: "Lockheed",
         date: "06/25/2023",
         location: "KBGR",
-        reg: "65849"
+        reg: "65849",
+        headerReady: true
     },
     {
         src: "/images/planes/20241219_202355.jpg",
@@ -176,7 +193,8 @@ const PLANES = [
         manufacturer: "Boeing",
         date: "12/19/2024",
         location: "KBGR",
-        reg: "60-0056"
+        reg: "60-0056",
+        headerReady: true
     },
     {
         src: "/images/planes/b52_edit1.jpg",
@@ -186,7 +204,8 @@ const PLANES = [
         manufacturer: "Boeing",
         date: "12/19/2024",
         location: "KBGR",
-        reg: "60-0056"
+        reg: "60-0056",
+        headerReady: true
     },
     {
         src: "/images/planes/b52_edit2.jpg",
@@ -196,12 +215,13 @@ const PLANES = [
         manufacturer: "Boeing",
         date: "12/19/2024",
         location: "KBGR",
-        reg: "60-0029"
+        reg: "60-0029",
+        headerReady: true
     }
 ]
 
 export default function Page() {
-    var images = PLANES.map((plane) => {
+    var images = Planes.map((plane) => {
         var subcaption = <span>{plane.manufacturer} {plane.model} [{plane.reg}] <br/> {plane.location} ({plane.date})</span>
         var caption = plane.date != undefined? `<span class="text-[20px] relative bottom-[30px] bg-slate-900 rounded-xl p-5">${plane.manufacturer} ${plane.model} (<a href="https://www.flightaware.com/live/flight/${plane.reg}" target="_blank">${plane.reg}</a>) - ${plane.location} (${plane.date})</span>`: '<span class="text-[20px] relative bottom-[30px] bg-slate-900 rounded-xl p-5">No Data Found</span>'
         return <Item key={plane.src} original={plane.src} width={plane.width} height={plane.height} caption={caption}>
