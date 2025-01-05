@@ -2,7 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import dynamic from 'next/dynamic'
-import {Navigation, Footer, FallbackHeader} from "./globals"
+import {Navigation, Footer} from "./globals"
+import { FallbackHeader } from "../components/header";
 
 const Header = dynamic(() => import('../components/header'), { ssr: false, loading: () => <FallbackHeader/> })
 
