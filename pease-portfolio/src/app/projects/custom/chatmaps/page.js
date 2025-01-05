@@ -5,7 +5,7 @@ import { useKeenSlider } from 'keen-slider/react'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { grey } from '@mui/material/colors'
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 
 import { FileList } from "../../../../components/filelist"
 

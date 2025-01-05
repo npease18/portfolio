@@ -13,8 +13,6 @@ export const Chrono = dynamic(() => import('react-chrono').then(lib => lib.Chron
   ssr: false,
 })
 
-
-
 import { FileList } from "@/components/filelist"
 
 var fileList = [
@@ -149,8 +147,8 @@ export default function Home() {
                         <img src="/images/aa2.png" className="max-md:w-[80%] md:w-[60%]"/>
                     </section>
                     <section className="flex justify-center items-center mt-5">
+                        <Link href="https://github.com/npease18/aviationassistantv2" className="ml-2 mr-2 flex justify-center"><img className="" src="https://img.shields.io/badge/Open%20On%20Github-grey?style=for-the-badge&logo=github"/></Link>
                         <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22137%22%20height%3D%2228%22%20role%3D%22img%22%20aria-label%3D%22VERSION%3A%202.1.2%22%3E%3Ctitle%3EVERSION%3A%202.1.2%3C%2Ftitle%3E%3Cg%20shape-rendering%3D%22crispEdges%22%3E%3Crect%20width%3D%2278.75%22%20height%3D%2228%22%20fill%3D%22%23555%22%2F%3E%3Crect%20x%3D%2278.75%22%20width%3D%2258.25%22%20height%3D%2228%22%20fill%3D%22%234c1%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%20font-family%3D%22Verdana%2CGeneva%2CDejaVu%20Sans%2Csans-serif%22%20text-rendering%3D%22geometricPrecision%22%20font-size%3D%22100%22%3E%3Ctext%20transform%3D%22scale(.1)%22%20x%3D%22393.75%22%20y%3D%22175%22%20textLength%3D%22547.5%22%20fill%3D%22%23fff%22%3EVERSION%3C%2Ftext%3E%3Ctext%20transform%3D%22scale(.1)%22%20x%3D%221078.75%22%20y%3D%22175%22%20textLength%3D%22342.5%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E2.1.2%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E" className="ml-5 mr-5"/>
-                        <Link href="https://gitea.nicholaspease.com/npease/AviationAssistantV2" target="_blank"><img src="https://img.shields.io/badge/Open%20On%20Gitea-grey?style=for-the-badge&logo=gitea"/></Link>
                     </section>
                     <section className="mt-2 text-center pt-3 relative max-md:w-[80%] max-md:left-[10%] md:left-[20%] md:w-[60%]">
                         This project is a <Link href="/projects/Aviation Assistant V1" className="underline">continuation of the Aviation Assistant V1</Link> project with the goal of increased runtime and deployability. Some significant improvements over the original
