@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css";
 
 import dynamic from 'next/dynamic'
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
         <Navigation/>
         {children}
         <Analytics />
+        <SpeedInsights />
         <Footer/>
       </body>
     </html>
