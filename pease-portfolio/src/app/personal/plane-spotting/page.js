@@ -193,8 +193,7 @@ export const Planes = [
         manufacturer: "Boeing",
         date: "12/19/2024",
         location: "KBGR",
-        reg: "60-0056",
-        headerReady: true
+        reg: "60056"
     },
     {
         src: "/images/planes/b52_edit1.jpg",
@@ -204,8 +203,7 @@ export const Planes = [
         manufacturer: "Boeing",
         date: "12/19/2024",
         location: "KBGR",
-        reg: "60-0056",
-        headerReady: true
+        reg: "60056"
     },
     {
         src: "/images/planes/b52_edit2.jpg",
@@ -215,8 +213,17 @@ export const Planes = [
         manufacturer: "Boeing",
         date: "12/19/2024",
         location: "KBGR",
-        reg: "60-0029",
-        headerReady: true
+        reg: "60029"
+    },
+    {
+        src: "/images/planes/c5_5feb25.png",
+        width: 4906,
+        height: 2760,
+        model: "C-5M",
+        manufacturer: "Lockheed",
+        date: "02/25/2025",
+        location: "KBGR",
+        reg: "60020"
     }
 ]
 
