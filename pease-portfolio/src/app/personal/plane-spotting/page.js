@@ -224,6 +224,16 @@ export const Planes = [
         date: "02/25/2025",
         location: "KBGR",
         reg: "60020"
+    },
+    {
+        src: "/images/planes/a330.jpg",
+        width: 4000,
+        height: 1868,
+        model: "A330",
+        manufacturer: "Airbus",
+        date: "02/06/2025",
+        location: "KBGR",
+        reg: "N996JA"
     }
 ]
 
