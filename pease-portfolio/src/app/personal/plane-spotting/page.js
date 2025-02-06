@@ -221,7 +221,7 @@ export const Planes = [
         height: 2760,
         model: "C-5M",
         manufacturer: "Lockheed",
-        date: "02/25/2025",
+        date: "02/05/2025",
         location: "KBGR",
         reg: "60020"
     },
@@ -229,7 +229,7 @@ export const Planes = [
         src: "/images/planes/a330.jpg",
         width: 4000,
         height: 1868,
-        model: "A330",
+        model: "A330-343",
         manufacturer: "Airbus",
         date: "02/06/2025",
         location: "KBGR",
