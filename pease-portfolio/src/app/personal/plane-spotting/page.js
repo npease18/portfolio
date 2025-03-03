@@ -193,7 +193,8 @@ export const Planes = [
         manufacturer: "Boeing",
         date: "12/19/2024",
         location: "KBGR",
-        reg: "60056"
+        reg: "60056",
+        headerReady: true
     },
     {
         src: "/images/planes/b52_edit1.jpg",
@@ -203,7 +204,8 @@ export const Planes = [
         manufacturer: "Boeing",
         date: "12/19/2024",
         location: "KBGR",
-        reg: "60056"
+        reg: "60056",
+        headerReady: true
     },
     {
         src: "/images/planes/b52_edit2.jpg",
@@ -223,7 +225,8 @@ export const Planes = [
         manufacturer: "Lockheed",
         date: "02/05/2025",
         location: "KBGR",
-        reg: "60020"
+        reg: "60020",
+        headerReady: true
     },
     {
         src: "/images/planes/a330.jpg",
@@ -234,6 +237,47 @@ export const Planes = [
         date: "02/06/2025",
         location: "KBGR",
         reg: "N996JA"
+    },
+    {
+        src: '/images/planes/747_1.jpg',
+        width: 3092,
+        height: 1739,
+        model: "747-400",
+        manufacturer: "Boeing",
+        date: "03/02/2025",
+        location: "KBGR",
+        reg: "N84882"
+    },
+    {
+        src: '/images/planes/747_2.jpg',
+        width: 4000,
+        height: 3000,
+        model: "747-400",
+        manufacturer: "Boeing",
+        date: "03/02/2025",
+        location: "KBGR",
+        reg: "N537CA",
+        headerReady: true
+    },
+    {
+        src: '/images/planes/747_3.jpg',
+        width: 2650,
+        height: 1490,
+        model: "747-400",
+        manufacturer: "Boeing",
+        date: "03/02/2025",
+        location: "KBGR",
+        reg: "N537CA"
+    },
+    {
+        src: '/images/planes/KC135_1.jpg',
+        width: 3427,
+        height: 1928,
+        model: "KC-135",
+        manufacturer: "Boeing",
+        date: "03/02/2025",
+        location: "KBGR",
+        reg: "14-828"
     }
 ]
 
