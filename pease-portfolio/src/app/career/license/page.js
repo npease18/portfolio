@@ -1,11 +1,19 @@
 const CERTS = [
     {
+        name: "Office Specialist: Excel Expert",
+        issuedBy: "Microsoft",
+        date: "May 2025",
+        img: "https://pluspng.com/img-png/excel-logo-png-img-microsoft-excel-logo-in-svg-vector-or-png-file-format-3000x2000.png",
+        id: "a7616603-23ef-4427-932d-8b09af381512",
+        link: "https://www.credly.com/badges/a7616603-23ef-4427-932d-8b09af381512/"
+    },
+    {
         name: "Office Specialist: Excel Associate",
         issuedBy: "Microsoft",
         date: "Oct 2024",
         img: "https://pluspng.com/img-png/excel-logo-png-img-microsoft-excel-logo-in-svg-vector-or-png-file-format-3000x2000.png",
         id: "d616eed8-2e1a-46dd-b9ae-5e09e2db916d",
-        link: "https://www.credly.com/badges/d616eed8-2e1a-46dd-b9ae-5e09e2db916d/linked_in_profile"
+        link: "https://www.credly.com/badges/d616eed8-2e1a-46dd-b9ae-5e09e2db916d/"
     },
     {
         name: "5G Introductory-Level Certificate",
