@@ -278,6 +278,15 @@ export const Planes = [
         date: "03/02/2025",
         location: "KBGR",
         reg: "14-828"
+    },
+    {
+        src: '/images/planes/pats.jpg',
+        width: 4000,
+        height: 1868,
+        model: "767-323ER",
+        manufacturer: "Boeing",
+        date: "05/24/2025",
+        reg: "N225NE"
     }
 ]
 
