@@ -3,11 +3,8 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css";
 
-import dynamic from 'next/dynamic'
 import {Navigation, Footer} from "./globals"
-import { FallbackHeader } from "../components/header";
-
-const Header = dynamic(() => import('../components/header'), { ssr: false, loading: () => <FallbackHeader/> })
+import HeaderWrapper from "../components/header-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html className="no-scrollbar" lang="en">
       <body className={inter.className}>
-        <Header/>
+        <HeaderWrapper/>
         <Navigation/>
         {children}
         <Analytics />
