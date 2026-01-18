@@ -84,5 +84,5 @@ body {
 }
 
 .animate-blink {
-  animation: blink 1s step-end infinite;
+  animation: blink 1.2s ease-in-out infinite;
 }
