@@ -4,7 +4,7 @@ import moment from "moment"
 import { TelnetDisplay } from "./telnet";
 
 const commands = {
-    "uname -a": "Hello! My name is Nicholas Pease and I am currently a junior at the University of Maine pursuing a bachelors degree in Computer Science with a minor in Military Science. This website is a collection of both project / homework completed as required by my studies and as a showcase of some of the personal projects I have worked on. I will work to keep this up to date to the best of my ability. ",
+    "uname -a": "Hello! My name is Nicholas Pease and I am Software Developer for Tyler Technologies. This website is a collection of both project / homework completed as required by my studies and as a showcase of some of the personal projects I have worked on. I will work to keep this up to date to the best of my ability. ",
     "poweroff": "Nice try...",
     "shutdown": "Nice try...",
     "sudo poweroff": "Nice try...",
