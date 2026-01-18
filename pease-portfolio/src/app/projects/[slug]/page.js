@@ -2,7 +2,8 @@ import Projects from "../../projects.json"
 import { redirect } from "next/navigation";
 
 export async function generateMetadata({params}) {
-    var name = params.slug.replaceAll("%20", " ")
+    const resolvedParams = await params;
+    var name = resolvedParams.slug.replaceAll("%20", " ")
     if (name in Projects) {
         return {
             title: `${name} | nicholaspease.com`
@@ -14,8 +15,9 @@ export async function generateMetadata({params}) {
     }
 }
 
-function Page({params}) {
-    var name = params.slug.replaceAll("%20", " ")
+async function Page({params}) {
+    const resolvedParams = await params;
+    var name = resolvedParams.slug.replaceAll("%20", " ")
     if (name in Projects) {
         var Project = Projects[name]
         if (Project.hasCustomPage) {
