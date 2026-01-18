@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -59,4 +61,28 @@ body {
 
 .button-expand:hover {
   background: #004d2d;
+}
+
+/* Custom Tailwind animations moved from config */
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  from, to {
+    background: black;
+  }
+  50% {
+    background: white;
+  }
+}
+
+.animate-typewriter {
+  animation: typewriter 1s steps(8) forwards;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
 }
