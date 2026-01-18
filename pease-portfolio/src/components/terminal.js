@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react";
 import moment from "moment"
 import { TelnetDisplay } from "./telnet";
@@ -42,9 +43,14 @@ function isValidKey(event) {
       }
 }
 
-export function Terminal() {
+export function Terminal({ buildTime }) {
     const [text, setText] = useState("")
-    const [history, setHistory] = useState([<Command command="uname -a" key={0}/>,<Command command={'timedatectl'} result={`This website was last updated on ${moment().format("dddd, MMMM Do YYYY")}.`} key={1}/>,<Command command="compgen -c" key={2}/>])
+    const lastUpdated = moment(buildTime)
+    const [history, setHistory] = useState([
+        <Command command="uname -a" key={0}/>,
+        <Command command={'timedatectl'} result={`This website was last updated on ${lastUpdated.format("dddd, MMMM Do YYYY")}.`} key={1}/>,
+        <Command command="compgen -c" key={2}/>
+    ])
 
     const handleKeyDown = event => {
         event.preventDefault()
@@ -53,7 +59,7 @@ export function Terminal() {
             if (text == "clear") {
                 setHistory([])
             } else if (text == "timedatectl") {
-                setHistory([...history, <Command command={text} result={`This website was last updated on ${moment().format("dddd, MMMM Do YYYY")}.`} key={history.length? history[history.length-1].props.key+1: 0}/>])
+                setHistory([...history, <Command command={text} result={`This website was last updated on ${lastUpdated.format("dddd, MMMM Do YYYY")}.`} key={history.length? history[history.length-1].props.key+1: 0}/>])
             } else if (commands[text] != undefined) {
                 setHistory([...history, <Command command={text} key={history.length? history[history.length-1].props.key+1: 0}/>])
             } else {
