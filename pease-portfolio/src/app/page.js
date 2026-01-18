@@ -6,7 +6,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 import Link from "next/link"
 
-import { Terminal } from "../components/terminal.js"
+import TerminalWrapper from "../components/terminal-wrapper"
 
 
 function AboutMe() {
@@ -25,7 +25,7 @@ function AboutMe() {
           </div>
         </div>
         <div className="col-span-2">
-          <Terminal/>
+          <TerminalWrapper/>
         </div>
       </div>
     </div>
